@@ -1,0 +1,2 @@
+# CleanOkDiploma
+Wagtail singlepage site
