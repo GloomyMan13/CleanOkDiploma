@@ -17,6 +17,7 @@ urlpatterns = [
     path('search/', search_views.search, name='search'),
 
 ]
+# path('map/', include('map.urls')),
 
 
 if settings.DEBUG:

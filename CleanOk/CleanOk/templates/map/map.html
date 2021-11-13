@@ -1,0 +1,19 @@
+{% load wagtailcore_tags %}
+{% block content %}
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_KEY }}"> </script>
+      <script type="text/javascript">
+          var pages = [];
+          {% for page in pages %}
+            pages.push([
+                {{ page.location.latitude }},
+                {{ page.location.longitude }},
+                "{{ page.title }}",
+            ]);
+          {% endfor %}
+          var map = undefined;
+          var markers = [];
+          function addMarker(lat, long, title, text) {
+              var latLng = new google.maps.LatLng(lat, long);
+              var marker = new google.maps.Marker({
+              position: latLng,
+{% endblock %}

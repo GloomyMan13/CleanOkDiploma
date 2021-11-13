@@ -4,6 +4,9 @@
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
             {% block title %}
                 {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
@@ -22,9 +25,71 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+        <link rel="stylesheet" href="../static/normalize.css" />
+        <link rel="stylesheet" href="../static/css/style.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Yanone+Kaffeesatz&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
+          rel="stylesheet"
+        />
+        <script src="../static/js/main.js" defer></script>
+
+        <!-- Smartsupp Live Chat script -->
+        <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = '22e2bf67e4015fc587d9c18a2da9cf3b3623474d';
+        window.smartsupp||(function(d) {
+          var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+          s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+          c.type='text/javascript';c.charset='utf-8';c.async=true;
+          c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+        </script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+    {% block main_navigation %}
+     <header class="header">
+      <div class="container header__container">
+          <a href="/"><div class="logo">CLEANOK</div></a>
+        <div class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link link">Клиенты</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link link">Услуги</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link link">Сертификаты</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link link">Контакты</a>
+            </li>
+            <li class="nav__item">
+              <a href="/employees/" class="nav__link link">Сотрудники</a>
+            </li>
+          </ul>
+          <div class="nav__burger">
+            <a href="#modalOpen" class="nav__link link">
+              <div class="burger">
+                <span class="burger burger-one"></span>
+                <span class="burger burger-tow"></span>
+                <span class="burger burger-three"></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    {% endblock %}
         {% wagtailuserbar %}
 
         {% block content %}{% endblock %}

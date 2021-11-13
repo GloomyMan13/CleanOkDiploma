@@ -26,6 +26,12 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'flex',
+    'streams',
+    'contact',
+    'forms',
+    'map',
+    'wagtailmap',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -48,6 +54,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'captcha',
+    'wagtailcaptcha',
+    'wagtailfontawesome',
+    'wagtail_blocks',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +170,19 @@ WAGTAIL_SITE_NAME = "CleanOk"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = 'http://2380-92-37-229-250.ngrok.io'
+
+# Ключи для капчи
+RECAPTCHA_PUBLIC_KEY = "6Le29RYdAAAAAG3NjbHT0KLcu9c2s68tETqJTPWj"
+RECAPTCHA_PRIVATE_KEY = "6Le29RYdAAAAAFd60t73qfQAUtGgpYqTzHI1Vg9t"
+NOCAPTCHA = True
+# SILENCED_SYSTEM_CHECKS = {'captcha.recaptcha_test_key_error': True}
+
+#Параметры для Google Map
+# Mandatory
+WAGTAIL_ADDRESS_MAP_CENTER = 'Wellington, New Zealand'  # It must be a properly formatted address
+WAGTAIL_ADDRESS_MAP_KEY = 'AIzaSyDUEQtZCw1FDYDFdXK6ZEEMEHQSa5KNZOE'
+
+# Optional
+WAGTAIL_ADDRESS_MAP_ZOOM = 8  # See https://developers.google.com/maps/documentation/javascript/tutorial#MapOptions for more information.
+WAGTAIL_ADDRESS_MAP_LANGUAGE = 'ru'  # See https://developers.google.com/maps/faq#languagesupport for supported languages.

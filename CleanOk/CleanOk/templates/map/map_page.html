@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block content %}
+
+<a href="http://maps.google.com/?q={{ self.formatted_address }}">Open map (Formatted Address)</a>
+<a href="http://maps.google.com/?q={{ self.latlng_address }}">Open map (Lat/Long Address)</a>
+
+{% endblock %}
