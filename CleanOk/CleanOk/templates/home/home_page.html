@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CLEANOK</title>
-    <link rel="stylesheet" href="{%  static 'css/normalize.css' %}" />
-    <link rel="stylesheet" href="{%  static 'css/style.css' %}" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
       rel="stylesheet"
@@ -20,11 +20,12 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
       rel="stylesheet"
     />
-    <script src="{%  static 'js/main.js' %}" defer></script>
-    <script src="{%  static 'js/swiper.js' %}" defer></script>
-    <script src="{%  static 'js/nav-float.js' %}" defer></script>
-    <script src="{%  static 'js/btn.js' %}" defer></script>
-    <script src="{%  static 'js/modal.js' %}" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/swiper.js" defer></script>
+    <script src="./js/nav-float.js" defer></script>
+    <script src="./js/btn.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/scroll.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -33,16 +34,16 @@
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__link link">Клиенты</a>
+              <a href="#clients" class="nav__link link">Клиенты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Услуги</a>
+              <a href="#srv" class="nav__link link">Услуги</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Сертификаты</a>
+              <a href="#docs" class="nav__link link">Сертификаты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Контакты</a>
+              <a href="#contacts" class="nav__link link">Контакты</a>
             </li>
           </ul>
           <button type="button" class="nav__burger">
@@ -57,24 +58,24 @@
       <div class="float-nav">
         <div class="container header__container-float hidden">
           <div class="logo">CLEANOK</div>
-          <form>
-            <button href="#action" class="intro__btn-float">
+          <div class="intro__btn-float">
+            <a href="#call_action" class="nav__link-float">
               Заказать звонок
-            </button>
-          </form>
+            </a>
+          </div>
           <div class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#" class="nav__link link">Клиенты</a>
+                <a href="#clients" class="nav__link link">Клиенты</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Услуги</a>
+                <a href="#srv" class="nav__link link">Услуги</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Сертификаты</a>
+                <a href="#docs" class="nav__link link">Сертификаты</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Контакты</a>
+                <a href="#contacts" class="nav__link link">Контакты</a>
               </li>
             </ul>
             <button type="button" class="nav__burger">
@@ -98,13 +99,13 @@
             Забота о вашей недвижимости на регулярной и разовой основе.
             Отставьте заявку и наш менеджер свяжется с вами
           </p>
-          <form>
-            <button class="intro__btn" href="#action">Заказать звонок</button>
-          </form>
+          <div class="intro__btn">
+            <a href="#call_action" class="nav__link-btn yakor">Заказать звонок</a>
+          </div>
         </div>
         <div class="intro__features">
           <p>
-            Более <a href="#" class="city">60 городов </a><br />по Дальнему
+            Более <a href="#contacts" class="city">60 городов </a><br />по Дальнему
             Востоку
           </p>
           <!-- 60 городов гиперссылка -->
@@ -114,36 +115,36 @@
         </div>
       </div>
       <div class="intro__image">
-        <img src="./static/src/img/main_img.jpg" alt="clean room" />
+        <img src="./src/img/main_img.jpg" alt="clean room" />
       </div>
     </div>
-    <div class="clients container">
+    <div class="clients container" id="clients">
       <span class="clients__descr">Наши клиенты</span>
       <h2 class="clients__header">Нам доверяют</h2>
       <div class="clients__logo">
-        <img src="./static/src/icons/clients/mts.png" alt="MTS" />
-        <img src="./static/src/icons/clients/rzd.png" alt="RGD" />
-        <img src="./static/src/icons/clients/vtb24.png" alt="VTB" />
-        <img src="./static/src/icons/clients/sber.png" alt="Sber" />
-        <img src="./static/src/icons/clients/vostbank.png" alt="Vostochnyi" />
-        <img src="./static/src/icons/clients/tele2.png" alt="TELE2" />
-        <img src="./static/src/icons/clients/siemens.png" alt="Siemens" />
-        <img src="./static/src/icons/clients/russianstandart.png" alt="RussStand" />
-        <img src="./static/src/icons/clients/russiapost.png" alt="russian post" />
-        <img src="./static/src/icons/clients/museum.png" alt="Museum" />
-        <img src="./static/src/icons/clients/posudacentr.png" alt="PosudaCentr" />
-        <img src="./static/src/icons/clients/gerb.png" alt="gerb" />
-        <img src="./static/src/icons/clients/dvbank.png" alt="DV bank" />
-        <img src="./static/src/icons/clients/dvtamog.png" alt="DVTU" />
-        <img src="./static/src/icons/clients/deer.png" alt="deer" />
-        <img src="./static/src/icons/clients/atb.png" alt="ATB" />
-        <img src="./static/src/icons/clients/megafon.png" alt="Megafon" />
-        <img src="./static/src/icons/clients/rosbank.png" alt="Rosbank" />
-        <img src="./static/src/icons/clients/vivea.png" alt="Vivea" />
-        <img src="./static/src/icons/clients/baltica.png" alt="Baltica" />
+        <img src="./src/icons/clients/mts.png" alt="MTS" />
+        <img src="./src/icons/clients/rzd.png" alt="RGD" />
+        <img src="./src/icons/clients/vtb24.png" alt="VTB" />
+        <img src="./src/icons/clients/sber.png" alt="Sber" />
+        <img src="./src/icons/clients/vostbank.png" alt="Vostochnyi" />
+        <img src="./src/icons/clients/tele2.png" alt="TELE2" />
+        <img src="./src/icons/clients/siemens.png" alt="Siemens" />
+        <img src="./src/icons/clients/russianstandart.png" alt="RussStand" />
+        <img src="./src/icons/clients/russiapost.png" alt="russian post" />
+        <img src="./src/icons/clients/museum.png" alt="Museum" />
+        <img src="./src/icons/clients/posudacentr.png" alt="PosudaCentr" />
+        <img src="./src/icons/clients/gerb.png" alt="gerb" />
+        <img src="./src/icons/clients/dvbank.png" alt="DV bank" />
+        <img src="./src/icons/clients/dvtamog.png" alt="DVTU" />
+        <img src="./src/icons/clients/deer.png" alt="deer" />
+        <img src="./src/icons/clients/atb.png" alt="ATB" />
+        <img src="./src/icons/clients/megafon.png" alt="Megafon" />
+        <img src="./src/icons/clients/rosbank.png" alt="Rosbank" />
+        <img src="./src/icons/clients/vivea.png" alt="Vivea" />
+        <img src="./src/icons/clients/baltica.png" alt="Baltica" />
       </div>
     </div>
-    <section class="services container">
+    <section class="services container" id="srv">
       <span class="services__descr">услуги</span>
       <h2 class="services__header">
         Берем на себя заботу <br />о вашей недвижимости
@@ -279,14 +280,14 @@
               <div class="service-four__wrapper">
                 <div>
                   <div class="icon">
-                    <img src="./static/src/icons/service4/heating.png" alt="heating" />
+                    <img src="./src/icons/service4/heating.png" alt="heating" />
                   </div>
                   <div class="content"><p>Теплоснабжение</p></div>
                 </div>
                 <div>
                   <div class="icon">
                     <img
-                      src="./static/src/icons/service4/electricity.png"
+                      src="./src/icons/service4/electricity.png"
                       alt="electricity"
                     />
                   </div>
@@ -295,7 +296,7 @@
                 <div>
                   <div class="icon">
                     <img
-                      src="./static/src/icons/service4/plumbing.png"
+                      src="./src/icons/service4/plumbing.png"
                       alt="plumbing"
                     />
                   </div>
@@ -304,7 +305,7 @@
                 <div>
                   <div class="icon">
                     <img
-                      src="./static/src/icons/service4/remoteControl.png"
+                      src="./src/icons/service4/remoteControl.png"
                       alt="remotecntr"
                     />
                   </div>
@@ -315,7 +316,7 @@
                 <div>
                   <div class="icon">
                     <img
-                      src="./static/src/icons/service4/ventilation.png"
+                      src="./src/icons/service4/ventilation.png"
                       alt="ventilation"
                     />
                   </div>
@@ -325,7 +326,7 @@
                 </div>
                 <div>
                   <div class="icon">
-                    <img src="./static/src/icons/service4/fire.png" alt="fire" />
+                    <img src="./src/icons/service4/fire.png" alt="fire" />
                   </div>
                   <div class="content"><p>Противопожарная безопасность</p></div>
                 </div>
@@ -346,19 +347,19 @@
             <div class="service-five__info">
               <!-- <div class="service-five__content"> -->
               <div class="icon">
-                <img src="./static/src/icons/service5/parts.png" alt="parts" />
+                <img src="./src/icons/service5/parts.png" alt="parts" />
               </div>
               <div class="title">Запчасти;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/materials.png" alt="equipment" />
+                <img src="./src/icons/service5/materials.png" alt="equipment" />
               </div>
               <div class="title">Расходные материалы;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/equipment.png" alt="materials" />
+                <img src="./src/icons/service5/equipment.png" alt="materials" />
               </div>
               <div class="title">Оборудование и монтаж;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/office.png" alt="office" />
+                <img src="./src/icons/service5/office.png" alt="office" />
               </div>
               <div class="title">Общее офисное снабжение.</div>
               <!-- </div> -->
@@ -369,7 +370,7 @@
         <!-- карточка сервиса с ссылками -->
       </div>
     </section>
-    <div class="sertificates">
+    <div class="sertificates" id="docs">
       <div class="sertificates__wrapper">
         <div class="sertificates__title">
           <span class="sertificates__descr">сертификаты и рекомендации</span>
@@ -383,7 +384,7 @@
                   href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
                 >
                   <img
-                    src="./static/src/icons/PDFSertificat.png"
+                    src="./src/icons/PDFSertificat.png"
                     alt="sertificate"
                     class="slider-item__img"
                   />
@@ -400,7 +401,7 @@
                   href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
                 >
                   <img
-                    src="./static/src/icons/PDFSertificat.png"
+                    src="./src/icons/PDFSertificat.png"
                     alt="sertificate"
                     class="slider-item__img"
                   />
@@ -417,7 +418,7 @@
                   href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
                 >
                   <img
-                    src="./static/src/icons/PDFSertificat.png"
+                    src="./src/icons/PDFSertificat.png"
                     alt="sertificate"
                     class="slider-item__img"
                   />
@@ -436,7 +437,7 @@
                   href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
                 >
                   <img
-                    src="./static/src/icons/PDFSertificat.png"
+                    src="./src/icons/PDFSertificat.png"
                     alt="sertificate"
                     class="slider-item__img"
                   />
@@ -463,51 +464,56 @@
       </div>
       <!--  слайдер с сертификатами гиперссылки -->
     </div>
-    <div class="offices ">
+    <div class="offices " id="contacts">
       <div class="map">
-        <img src="./static/src/img/Map.jpg" alt="map" />
+        <img src="./src/img/Map.jpg" alt="map" />
       </div>
       <div class="search">
         <form action="get" class="cities">
-          <div class="city__searche">
-          <input class="city__name" placeholder="Введите свой город для поиска"></input>
-          <button class="serche__btn" type="button"></button>
+          <div class="search__city">
+            <input class="search__city-name" placeholder="Введите свой город для поиска"></input>
+            <button class="search__city-btn" type="button">
+              <img src="./src/icons/Arrow-Search.png" alt="arrow-search">
+            </button>
           </div>
-          <ul class="city_list">
-            <li class="city_item">
+          <div class="cities-list">
+            <div class="cities-item">
+              <p class="cities_name">Хабаровск</p>
+              <p class="cities_adress">ул. Серышева, 56</p>
+              <p class="cities_phone">+7 (4212) 616 649, +7 (4212) 770 333</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Петропавловск-Камчатский</p>
+              <p class="cities_adress">ул.Максутова, д. 42, оф. 44</p>
+              <p class="cities_phone">8 (4152) 42 63 14, 8 914 020 38 08</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Якутск</p>
+              <p class="cities_adress">ул. Орджонекидзе, д. 20, оф. 315</p>
+              <p class="cities_phone">8 914 288 88 84</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Комсомольск-на-Амуре</p>
+              <p class="cities_adress">ул. Красногвардейская, д. 14, оф. 204.</p>
+              <p class="cities_phone">8 (4217) 54-68-45</p>
+            </div>
+          </div>
+          <div class="gradient"></div>
+          <div class="search-info">
+            <div class="search-info_content">
+              <p class="search-info_text">Единая справочная служба</p>
+              <p class="search-info_phone">  8 800 333 99 09 </p>
+            </div>
+              <p class="search-info_text-tow">(по России звонок бесплатный)</p>
 
-            </li>
-            <li class="city_item">
+            <div class="search-info_mail link"><a href="#" class="search-info_mail link">info@cleanok.ru</a></div>
 
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-          </ul>
-          <div class="footer__info"></div>
+          </div>
         </form>
       </div>
     </div>
-    <section class="action">
-      <!-- <a id="call"></a> -->
+    <section class="action" >
+      <a id="call_action"></a>
       <div class="about">
         <span class="about_title">оставьте заявку</span>
         <h2 class="about_header">Напишите нам</h2>
@@ -520,7 +526,7 @@
           и предложим оптимальное решение.
         </article>
       </div>
-      <div class="action">
+      <div  class="action" >
         <form action="#"  method="post" class="action__form">
           <div class="form__wrapper">
             <div class="client_info">

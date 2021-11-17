@@ -23,7 +23,8 @@
     <script src="./js/swiper.js" defer></script>
     <script src="./js/nav-float.js" defer></script>
     <script src="./js/btn.js" defer></script>
-        <script src="./js/modal.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/scroll.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -32,16 +33,16 @@
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__link link">Клиенты</a>
+              <a href="#clients" class="nav__link link">Клиенты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Услуги</a>
+              <a href="#srv" class="nav__link link">Услуги</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Сертификаты</a>
+              <a href="#docs" class="nav__link link">Сертификаты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Контакты</a>
+              <a href="#contacts" class="nav__link link">Контакты</a>
             </li>
           </ul>
           <button type="button" class="nav__burger">
@@ -56,24 +57,24 @@
       <div class="float-nav">
         <div class="container header__container-float hidden">
           <div class="logo">CLEANOK</div>
-          <form>
-            <button href="#action" class="intro__btn-float">
+          <div class="intro__btn-float">
+            <a href="#call_action" class="nav__link-float">
               Заказать звонок
-            </button>
-          </form>
+            </a>
+          </div>
           <div class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#" class="nav__link link">Клиенты</a>
+                <a href="#clients" class="nav__link link">Клиенты</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Услуги</a>
+                <a href="#srv" class="nav__link link">Услуги</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Сертификаты</a>
+                <a href="#docs" class="nav__link link">Сертификаты</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link link">Контакты</a>
+                <a href="#contacts" class="nav__link link">Контакты</a>
               </li>
             </ul>
             <button type="button" class="nav__burger">
@@ -97,13 +98,13 @@
             Забота о вашей недвижимости на регулярной и разовой основе.
             Отставьте заявку и наш менеджер свяжется с вами
           </p>
-          <form>
-            <button class="intro__btn" href="#action">Заказать звонок</button>
-          </form>
+          <div class="intro__btn">
+            <a href="#call_action" class="nav__link-btn yakor">Заказать звонок</a>
+          </div>
         </div>
         <div class="intro__features">
           <p>
-            Более <a href="#" class="city">60 городов </a><br />по Дальнему
+            Более <a href="#contacts" class="city">60 городов </a><br />по Дальнему
             Востоку
           </p>
           <!-- 60 городов гиперссылка -->
@@ -116,7 +117,7 @@
         <img src="./src/img/main_img.jpg" alt="clean room" />
       </div>
     </div>
-    <div class="clients container">
+    <div class="clients container" id="clients">
       <span class="clients__descr">Наши клиенты</span>
       <h2 class="clients__header">Нам доверяют</h2>
       <div class="clients__logo">
@@ -142,7 +143,7 @@
         <img src="./src/icons/clients/baltica.png" alt="Baltica" />
       </div>
     </div>
-    <section class="services container">
+    <section class="services container" id="srv">
       <span class="services__descr">услуги</span>
       <h2 class="services__header">
         Берем на себя заботу <br />о вашей недвижимости
@@ -368,7 +369,7 @@
         <!-- карточка сервиса с ссылками -->
       </div>
     </section>
-    <div class="sertificates">
+    <div class="sertificates" id="docs">
       <div class="sertificates__wrapper">
         <div class="sertificates__title">
           <span class="sertificates__descr">сертификаты и рекомендации</span>
@@ -462,51 +463,56 @@
       </div>
       <!--  слайдер с сертификатами гиперссылки -->
     </div>
-    <div class="offices ">
+    <div class="offices " id="contacts">
       <div class="map">
         <img src="./src/img/Map.jpg" alt="map" />
       </div>
       <div class="search">
         <form action="get" class="cities">
-          <div class="city__searche">
-          <input class="city__name" placeholder="Введите свой город для поиска"></input>
-          <button class="serche__btn" type="button"></button>
+          <div class="search__city">
+            <input class="search__city-name" placeholder="Введите свой город для поиска"></input>
+            <button class="search__city-btn" type="button">
+              <img src="./src/icons/Arrow-Search.png" alt="arrow-search">
+            </button>
           </div>
-          <ul class="city_list">
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-            <li class="city_item">
-
-            </li>
-          </ul>
-          <div class="footer__info"></div>
+          <div class="cities-list">            
+            <div class="cities-item">
+              <p class="cities_name">Хабаровск</p>
+              <p class="cities_adress">ул. Серышева, 56</p>
+              <p class="cities_phone">+7 (4212) 616 649, +7 (4212) 770 333</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Петропавловск-Камчатский</p>
+              <p class="cities_adress">ул.Максутова, д. 42, оф. 44</p>
+              <p class="cities_phone">8 (4152) 42 63 14, 8 914 020 38 08</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Якутск</p>
+              <p class="cities_adress">ул. Орджонекидзе, д. 20, оф. 315</p>
+              <p class="cities_phone">8 914 288 88 84</p>
+            </div>
+            <div class="cities-item">
+              <p class="cities_name">Комсомольск-на-Амуре</p>
+              <p class="cities_adress">ул. Красногвардейская, д. 14, оф. 204.</p>
+              <p class="cities_phone">8 (4217) 54-68-45</p>
+            </div>            
+          </div>
+          <div class="gradient"></div>
+          <div class="search-info">
+            <div class="search-info_content">
+              <p class="search-info_text">Единая справочная служба</p>
+              <p class="search-info_phone">  8 800 333 99 09 </p>
+            </div>
+              <p class="search-info_text-tow">(по России звонок бесплатный)</p>
+            
+            <div class="search-info_mail link"><a href="#" class="search-info_mail link">info@cleanok.ru</a></div>
+            
+          </div>
         </form>
       </div>
     </div>
-    <section class="action">
-      <!-- <a id="call"></a> -->
+    <section class="action" >
+      <a id="call_action"></a>
       <div class="about">
         <span class="about_title">оставьте заявку</span>
         <h2 class="about_header">Напишите нам</h2>
@@ -519,7 +525,7 @@
           и предложим оптимальное решение.
         </article>
       </div>
-      <div class="action">
+      <div  class="action" >
         <form action="#"  method="post" class="action__form">
           <div class="form__wrapper">
             <div class="client_info">
@@ -566,7 +572,7 @@
           <li class="nav__item">
             <a href="#" class="nav__link link">Еще одна страница</a>
           </li>
-        </ul>
+        </ul>   
       </div>
       <div class="divider"><hr></div>
       <div class="nav__burger-contacts">
