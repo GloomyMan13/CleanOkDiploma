@@ -36,6 +36,42 @@ h2 {
           align-items: center;
 }
 
+.fixed {
+  width: 1440px;
+  height: 60px;
+  position: fixed;
+  z-index: 1555;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+          box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+}
+
+.intro__btn-float {
+  width: 150px;
+  height: 30px;
+  background-color: #FF785F;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  margin-left: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__link-float {
+  text-decoration: none;
+  color: #ffff;
+}
+
 .logo {
   color: #041133;
   font-family: Dosis;
@@ -814,71 +850,6 @@ sup {
   color: rgba(0, 0, 0, 0.7);
   opacity: 0.8;
   text-align: center;
-}
-
-.float-nav {
-  width: 1440px;
-  margin: 0 auto;
-}
-
-.header__container-float {
-  z-index: 99999;
-  position: fixed;
-  margin-top: -55px;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
-          box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
-}
-
-.logo {
-  color: #041133;
-  font-family: Dosis;
-  font-weight: bold;
-  font-size: 25px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-left: 30px;
-}
-
-.nav__link {
-  text-decoration: none;
-  color: #041133;
-}
-
-.intro__btn-float {
-  width: 150px;
-  height: 30px;
-  background-color: #FF785F;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  border: none;
-  margin-left: 550px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.nav__link-float {
-  text-decoration: none;
-  color: #ffff;
 }
 
 .offices {

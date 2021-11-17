@@ -36,6 +36,42 @@ h2 {
           align-items: center;
 }
 
+.fixed {
+  width: 1440px;
+  height: 60px;
+  position: fixed;
+  z-index: 1555;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+          box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+}
+
+.intro__btn-float {
+  width: 150px;
+  height: 30px;
+  background-color: #FF785F;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  margin-left: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__link-float {
+  text-decoration: none;
+  color: #ffff;
+}
+
 .logo {
   color: #041133;
   font-family: Dosis;
