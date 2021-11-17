@@ -28,9 +28,14 @@
     <script src="{%  static 'js/scroll.js' %}" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="container header__container">
+    <header class="header container">
+      <div class=" header__container">
         <div class="logo">CLEANOK</div>
+        <div class="intro__btn-float hidden">
+            <a href="#call_action" class="nav__link-float">
+              Заказать звонок
+            </a>
+          </div>
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -53,39 +58,6 @@
                 <hr class="burger burger-three"></hr>
               </div>
           </button>
-        </div>
-      </div>
-      <div class="float-nav">
-        <div class="container header__container-float hidden">
-          <div class="logo">CLEANOK</div>
-          <div class="intro__btn-float">
-            <a href="#call_action" class="nav__link-float">
-              Заказать звонок
-            </a>
-          </div>
-          <div class="nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a href="#clients" class="nav__link link">Клиенты</a>
-              </li>
-              <li class="nav__item">
-                <a href="#srv" class="nav__link link">Услуги</a>
-              </li>
-              <li class="nav__item">
-                <a href="#docs" class="nav__link link">Сертификаты</a>
-              </li>
-              <li class="nav__item">
-                <a href="#contacts" class="nav__link link">Контакты</a>
-              </li>
-            </ul>
-            <button type="button" class="nav__burger">
-              <div class="burger">
-                <hr class="burger burger-one"></hr>
-                <hr class="burger burger-tow"></hr>
-                <hr class="burger burger-three"></hr>
-              </div>
-            </button>
-          </div>
         </div>
       </div>
     </header>
@@ -526,7 +498,7 @@
           и предложим оптимальное решение.
         </article>
       </div>
-      <div  class="action" >
+      <div class="action">
         <form action="#"  method="post" class="action__form">
           <div class="form__wrapper">
             <div class="client_info">
