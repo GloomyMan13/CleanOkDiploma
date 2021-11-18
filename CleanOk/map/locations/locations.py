@@ -32,13 +32,15 @@ def locations(place1 = "Красная площадь, Москва"):
     longitude = location.longitude
     loc = float(latitude), float(longitude)
     folium.Marker(location=loc, popup="Красная площадь, Москва").add_to(m)
-    folium.Marker(location=loc1, popup="Улица Ленина, Хабаровск").add_to(m)
+    folium.Marker(location=loc1, popup="Улица Ленина, Хабаровск").add_to(m) #, icon=folium.plugins.BeautifyIcon(spin=True)
 
     iframe = m._repr_html_()
 
     Html_file = open("./CleanOk/templates/maps_django/map.html", "w")
     Html_file.write(iframe)
     Html_file.close()
+
+    m.save('mapss.html')
 
     return iframe
 
