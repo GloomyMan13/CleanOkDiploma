@@ -1,0 +1,75 @@
+{{self.block_content}}
+<!--
+<section class="services container" id="srv">
+  <span class="services__descr">услуги</span>
+  <h2 class="services__header">
+    Берем на себя заботу <br />о вашей недвижимости
+  </h2>
+  <div class="services__info">
+    <div class="services__list">
+      <button
+        class="tablinks"
+        onclick="openService(event, 'service-one')"
+        id="defaultOpen"
+      >
+
+        <div class="list-number">01</div>
+        <div class="list-header">
+          Содержание внутренних помещений и территорий
+        </div>
+      </button>
+      <button class="tablinks" onclick="openService(event, 'service-tow')">
+        <div class="list-number">02</div>
+        <div class="list-header">
+          Управление и эксплуатация коммерческой недвижимости и в сфере ЖКХ
+        </div>
+      </button>
+      <button
+        class="tablinks"
+        onclick="openService(event, 'service-three')"
+      >
+        <div class="list-number">03</div>
+        <div class="list-header">Хозяйственное <br />обслуживание</div>
+      </button>
+      <button class="tablinks" onclick="openService(event, 'service-four')">
+        <div class="list-number">04</div>
+        <div class="list-header">
+          Техническое обслуживание инженерных систем
+        </div>
+      </button>
+      <button class="tablinks" onclick="openService(event, 'service-five')">
+        <div class="list-number">05</div>
+        <div class="list-header">
+          Поддержка материально- технической базы
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+-->
+
+
+<section class="services container" id="srv">
+  <span class="services__descr">услуги</span>
+  <h2 class="services__header">
+    Берем на себя заботу <br />о вашей недвижимости
+  </h2>
+        {%for left_name in title %}
+            <div class="services__info">
+                <div class="services__list">
+                  <button
+                    class="tablinks"
+                    onclick="openService(event, 'service-one')"
+                    id="defaultOpen"
+                  >
+                    <!-- when click goes blue and chandge card -->
+                    <div class="list-number">01</div>
+                    <div class="list-header">
+                      {{left_name}}
+                    </div>
+                  </button>
+                </div>
+            </div>
+        {% endfor %}
+{{self.block_content}}
+</section>

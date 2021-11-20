@@ -1,10 +1,5 @@
 {% load wagtailcore_tags wagtailimages_tags %}
-<div>
-    <div>
-        <div>
-            <h2>{{ self.title }}</h2>
+
+            <div class="title-one">{{ self.title }}</div>
             {% image self.img fill-320x240 %}
-            <p>{{ self.text|linebreaks|truncatewords:50 }}</p>
-        </div>
-    </div>
-</div>
+            <div class="content-one">{{ self.text }}</div>

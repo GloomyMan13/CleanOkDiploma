@@ -1,0 +1,7 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+{{ self.custom_title }}
+{% for block in self.content %}
+    {% include_block block %}
+{% endfor %}
+{% endblock content %}

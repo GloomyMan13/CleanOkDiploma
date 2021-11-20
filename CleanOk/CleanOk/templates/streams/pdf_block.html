@@ -1,0 +1,39 @@
+{% load wagtailimages_tags %}
+
+<div class="sertificates" id="docs">
+      <div class="sertificates__wrapper">
+        <div class="sertificates__title">
+          <span class="sertificates__descr">сертификаты и рекомендации</span>
+          <h2 class="sertificates__header">{{ self.title }}</h2>
+        </div>
+        <div class="sertificates wrapper">
+          <div class="slider-container">
+            <div class="slider-track">
+
+                  {% for card in self.cards %}
+                 <div class="slider-item">
+                    {% image card.image fill-40x50 as img %}
+                    <a
+                      href="{{ card.button_url.url }}"
+                    >
+                      <img src="{{ img.url }}" alt="{{ img.alt }}" class="slider-item__img" />
+                    </a>
+                    <span class="slider-item__descr">{{ card.title }}</span>
+                    <h2 class="slider-item__header">{{card.name_company}}</h2>
+                    <p class="slider-item__content">
+                      {{ card.text }}
+                    </p>
+
+              </div>
+              {% endfor %}
+            </div>
+            <!-- <div class="swiper_arrows"> -->
+            <div class="slider-buttons">
+              <button class="btn-prev"></button>
+              <button class="btn-next"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  слайдер с сертификатами гиперссылки -->
+    </div>

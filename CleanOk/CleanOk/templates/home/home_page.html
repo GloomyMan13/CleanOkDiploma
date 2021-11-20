@@ -1,66 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CLEANOK</title>
-    <link rel="stylesheet" href="{%  static 'css/normalize.css' %}" />
-    <link rel="stylesheet" href="{%  static 'css/style.css' %}" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Yanone+Kaffeesatz&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
-      rel="stylesheet"
-    />
-    <script src="{%  static 'js/main.js' %}" defer></script>
-    <script src="{%  static 'js/swiper.js' %}" defer></script>
-    <script src="{%  static 'js/nav-float.js' %}" defer></script>
-    <script src="{%  static 'js/btn.js' %}" defer></script>
-    <script src="{%  static 'js/modal.js' %}" defer></script>
-    <script src="{%  static 'js/scroll.js' %}" defer></script>
-  </head>
-  <body>
-    <header class="header container">
-      <div class=" header__container">
-        <div class="logo">CLEANOK</div>
-        <div class="intro__btn-float hidden">
-            <a href="#call_action" class="nav__link-float">
-              Заказать звонок
-            </a>
-          </div>
-        <div class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#clients" class="nav__link link">Клиенты</a>
-            </li>
-            <li class="nav__item">
-              <a href="#srv" class="nav__link link">Услуги</a>
-            </li>
-            <li class="nav__item">
-              <a href="#docs" class="nav__link link">Сертификаты</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contacts" class="nav__link link">Контакты</a>
-            </li>
-          </ul>
-          <button type="button" class="nav__burger">
-              <div class="burger">
-                <hr class="burger burger-one"></hr>
-                <hr class="burger burger-tow"></hr>
-                <hr class="burger burger-three"></hr>
-              </div>
-          </button>
-        </div>
-      </div>
-    </header>
+{% extends "base.html" %}
+{% load wagtailcore_tags widget_tweaks %}
+{% block content %}
+
+
     <div class="intro container">
       <div class="intro__descr">
         <div>
@@ -342,104 +284,11 @@
         <!-- карточка сервиса с ссылками -->
       </div>
     </section>
-    <div class="sertificates" id="docs">
-      <div class="sertificates__wrapper">
-        <div class="sertificates__title">
-          <span class="sertificates__descr">сертификаты и рекомендации</span>
-          <h2 class="sertificates__header">Мы подтвеждаем компетенцию</h2>
-        </div>
-        <div class="sertificates wrapper">
-          <div class="slider-container">
-            <div class="slider-track">
-              <div class="slider-item">
-                <a
-                  href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
-                >
-                  <img
-                    src="./static/src/icons/PDFSertificat.png"
-                    alt="sertificate"
-                    class="slider-item__img"
-                  />
-                </a>
-                <span class="slider-item__descr">Сертификат</span>
-                <h2 class="slider-item__header">Veleda Professional</h2>
-                <p class="slider-item__content">
-                  Обучение по курсу <br />
-                  “Специалист”
-                </p>
-              </div>
-              <div class="slider-item">
-                <a
-                  href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
-                >
-                  <img
-                    src="./static/src/icons/PDFSertificat.png"
-                    alt="sertificate"
-                    class="slider-item__img"
-                  />
-                </a>
-                <span class="slider-item__descr">Сертификат</span>
-                <h2 class="slider-item__header">Gansow Gmatic AG</h2>
-                <p class="slider-item__content">
-                  Курс по эксплуатации, <br />обслуживанию и ремонту<br />
-                  поломоечных машин Gmatic
-                </p>
-              </div>
-              <div class="slider-item">
-                <a
-                  href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
-                >
-                  <img
-                    src="./static/src/icons/PDFSertificat.png"
-                    alt="sertificate"
-                    class="slider-item__img"
-                  />
-                </a>
-                <span class="slider-item__descr">Сертификат</span>
-                <h2 class="slider-item__header">
-                  Columbus Reinigungsmaschinen
-                </h2>
-                <p class="slider-item__content">
-                  CleanOk — официальный дилер<br />
-                  и сервисный центр
-                </p>
-              </div>
-              <div class="slider-item">
-                <a
-                  href="http://cleanok.ru/sites/default/files/Sertifikat_sootvetstviya.pdf"
-                >
-                  <img
-                    src="./static/src/icons/PDFSertificat.png"
-                    alt="sertificate"
-                    class="slider-item__img"
-                  />
-                </a>
-                <span class="slider-item__descr">Сертификат</span>
-                <h2 class="slider-item__header">Veleda Professional</h2>
-                <p class="slider-item__content">
-                  Официальный дистрибьютор<br />
-                  торговой марки
-                </p>
-              </div>
-              <div class="slider-item">слайд 5</div>
-              <div class="slider-item">слайд 6</div>
-              <div class="slider-item">слайд 7</div>
-              <div class="slider-item">слайд 8</div>
-            </div>
-            <!-- <div class="swiper_arrows"> -->
-            <div class="slider-buttons">
-              <button class="btn-prev"></button>
-              <button class="btn-next"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--  слайдер с сертификатами гиперссылки -->
-    </div>
+    {% for block in page.content %}
+        {% include_block block %}
+    {% endfor %}
     <div class="offices " id="contacts">
-      <div class="map">
-        <img src="./static/src/img/Map.jpg" alt="map" />
-      </div>
+      <div style="width: 1000px; height: 1000px"> {% include '../maps_django/map.html' only%}</div>
       <div class="search">
         <form action="get" class="cities">
           <div class="search__city">
@@ -514,6 +363,52 @@
         </form>
       </div>
     </section>
+
+    <section class="action">
+      <a id="call_action"></a>
+      <div class="about">
+        <span class="about_title">оставьте заявку</span>
+        <h2 class="about_header">Напишите нам</h2>
+        <article class="about_content">
+          С 2009 года создаем чистоту на объектах. Подбираем график с учетом
+          пожеланий клиента. <br><br>Экономим время, деньги и даем отличный результат за
+          счет использования профессиональной техники, экологически безопасных
+          средств, регулярного обучения персонала и оптимизации процесса.<br><br>
+          Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи
+          и предложим оптимальное решение.
+        </article>
+      </div>
+      <div class="action">
+        <form action="{% pageurl page %}" method="POST" class="action__form">
+          {% csrf_token %}
+          <div class="form__wrapper">
+                  <div class="">
+
+                    {% if form.non_field_errors %}
+                      <div class="alert alert-danger" role="alert">
+                        {% for error in form.non_field_errors %}
+                          {{ error }}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
+
+                    {% for field in form.visible_fields %}
+                      <div class="">
+
+                        {{ field.label_tag }}
+                        {% render_field field class+="form-control" %}
+
+                      </div>
+                    {% endfor %}
+                  </div>
+
+
+          <button type="submit" class="action__btn" >Submit</button>
+          </div>
+      </form>
+      </div>
+      </section>
+
     <footer class="footer">
       <container class="footer__wrapper container">
         <div class="footer__info">
@@ -553,5 +448,7 @@
         <p class="footer__contacts_phone">8 800 333 99 09</p>
       </div>
     </form>
-  </body>
-</html>
+
+
+
+{% endblock %}

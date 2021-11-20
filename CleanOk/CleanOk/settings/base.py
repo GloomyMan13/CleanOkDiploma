@@ -28,9 +28,9 @@ INSTALLED_APPS = [
     'search',
     'flex',
     'streams',
-    'contact',
+
     'forms',
-    'map',
+    'services',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'captcha',
     'wagtailcaptcha',
     'wagtailfontawesome',
+    'wagtail.contrib.modeladmin',
+    'wagtailstreamforms',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

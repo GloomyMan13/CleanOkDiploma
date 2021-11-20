@@ -1,5 +1,5 @@
+{% load static %}
 {% load static wagtailcore_tags wagtailuserbar %}
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -25,8 +25,8 @@
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-        <link rel="stylesheet" href="../static/normalize.css" />
-        <link rel="stylesheet" href="../static/css/style.css" />
+        <link rel="stylesheet" href="{%  static 'css/normalize.css' %}" />
+        <link rel="stylesheet" href="{%  static 'css/style.css' %}" />
         <link
           href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
           rel="stylesheet"
@@ -39,7 +39,7 @@
           href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
           rel="stylesheet"
         />
-        <script src="../static/js/main.js" defer></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Smartsupp Live Chat script -->
         <script type="text/javascript">
@@ -52,6 +52,12 @@
           c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
         })(document);
         </script>
+        <script src="{%  static 'js/main.js' %}" defer></script>
+        <script src="{%  static 'js/swiper.js' %}" defer></script>
+        <script src="{%  static 'js/nav-float.js' %}" defer></script>
+        <script src="{%  static 'js/btn.js' %}" defer></script>
+        <script src="{%  static 'js/modal.js' %}" defer></script>
+        <script src="{%  static 'js/scroll.js' %}" defer></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">

@@ -24,7 +24,7 @@ def locations(place1 = "Красная площадь, Москва"):
     longitude1 = location.longitude
     loc1 = float(latitude1), float(longitude1)
     # print(location)
-    m = folium.Map(location=loc1, zoom_start=4, width=1500, heigtht=100)
+    m = folium.Map(location=loc1, zoom_start=4, width=1000, heigtht=100)
     # m._build_map()
     place2 = "Красная площадь, Москва"
     location = geolocator.geocode(place2)
