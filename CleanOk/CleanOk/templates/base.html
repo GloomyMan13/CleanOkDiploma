@@ -20,13 +20,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/CleanOk.css' %}">
+
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
-        <link rel="stylesheet" href="{%  static 'css/normalize.css' %}" />
-        <link rel="stylesheet" href="{%  static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{%  static 'css/normalize.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}" />
         <link
           href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
           rel="stylesheet"
@@ -39,7 +39,13 @@
           href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <script  src="{%  static 'js/main.js' %}" defer></script>
+        <script  src="{%  static 'js/swiper.js' %}" defer></script>
+        <script  src="{%  static 'js/nav-float.js' %}" defer></script>
+        <script  src="{%  static 'js/btn.js' %}" defer></script>
+        <script  src="{%  static 'js/modal.js' %}" defer></script>
+        <script  src="{%  static 'js/scroll.js' %}" defer></script>
 
         <!-- Smartsupp Live Chat script -->
         <script type="text/javascript">
@@ -52,46 +58,41 @@
           c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
         })(document);
         </script>
-        <script src="{%  static 'js/main.js' %}" defer></script>
-        <script src="{%  static 'js/swiper.js' %}" defer></script>
-        <script src="{%  static 'js/nav-float.js' %}" defer></script>
-        <script src="{%  static 'js/btn.js' %}" defer></script>
-        <script src="{%  static 'js/modal.js' %}" defer></script>
-        <script src="{%  static 'js/scroll.js' %}" defer></script>
+
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
     {% block main_navigation %}
-     <header class="header">
-      <div class="container header__container">
-          <a href="/"><div class="logo">CLEANOK</div></a>
+<header class="header container">
+      <div class=" header__container">
+        <div class="logo">CLEANOK</div>
+        <div class="intro__btn-float hidden">
+            <a href="#call_action" class="nav__link-float">
+              Заказать звонок
+            </a>
+          </div>
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__link link">Клиенты</a>
+              <a href="#clients" class="nav__link link">Клиенты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Услуги</a>
+              <a href="#srv" class="nav__link link">Услуги</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Сертификаты</a>
+              <a href="#docs" class="nav__link link">Сертификаты</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link link">Контакты</a>
-            </li>
-            <li class="nav__item">
-              <a href="/employees/" class="nav__link link">Сотрудники</a>
+              <a href="#contacts" class="nav__link link">Контакты</a>
             </li>
           </ul>
-          <div class="nav__burger">
-            <a href="#modalOpen" class="nav__link link">
+          <button type="button" class="nav__burger">
               <div class="burger">
-                <span class="burger burger-one"></span>
-                <span class="burger burger-tow"></span>
-                <span class="burger burger-three"></span>
+                <hr class="burger burger-one"></hr>
+                <hr class="burger burger-tow"></hr>
+                <hr class="burger burger-three"></hr>
               </div>
-            </a>
-          </div>
+          </button>
         </div>
       </div>
     </header>
@@ -101,7 +102,12 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/CleanOk.js' %}"></script>
+        <script  src="{%  static 'js/main.js' %}" defer></script>
+        <script  src="{%  static 'js/swiper.js' %}" defer></script>
+        <script  src="{%  static 'js/nav-float.js' %}" defer></script>
+        <script  src="{%  static 'js/btn.js' %}" defer></script>
+        <script  src="{%  static 'js/modal.js' %}" defer></script>
+        <script  src="{%  static 'js/scroll.js' %}" defer></script>
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}

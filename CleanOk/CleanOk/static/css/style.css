@@ -1060,7 +1060,7 @@ sup {
 
 .about {
   width: 363px;
-  height: 405px;
+  min-height: 405px;
   margin-left: 366px;
   margin-top: 60px;
 }
@@ -1095,7 +1095,7 @@ sup {
 
 .form__wrapper {
   width: 362px;
-  height: 305px;
+  min-height: 305px;
   margin-top: 170px;
   margin-left: 82px;
   border: 0px;

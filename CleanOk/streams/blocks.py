@@ -51,7 +51,7 @@ class ServicesBlock(blocks.StructBlock): #blocks.StructBlock
 
 
 class CardBlock(blocks.StructBlock):
-    """Cards with image and text and button(s)."""
+    """Блок для описания карточек сертификатов. Картина Текст """
 
     title = blocks.CharBlock(required=True, help_text="Add your title")
 
@@ -136,6 +136,7 @@ class LinkStructValue(blocks.StructValue):
 
     # def latest_posts(self):
     #     return BlogDetailPage.objects.live()[:3]
+
 
 
 class ButtonBlock(blocks.StructBlock):

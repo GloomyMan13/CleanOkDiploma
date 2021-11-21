@@ -2,7 +2,6 @@
 {% load wagtailcore_tags widget_tweaks %}
 {% block content %}
 
-
     <div class="intro container">
       <div class="intro__descr">
         <div>
@@ -294,7 +293,7 @@
           <div class="search__city">
             <input class="search__city-name" placeholder="Введите свой город для поиска"></input>
             <button class="search__city-btn" type="button">
-              <img src="./src/icons/Arrow-Search.png" alt="arrow-search">
+              <img src="./static/src/icons/Arrow-Search.png"alt="arrow-search">
             </button>
           </div>
           <div class="cities-list">
@@ -392,18 +391,18 @@
                       </div>
                     {% endif %}
 
-                    {% for field in form.visible_fields %}
-                      <div class="">
+                      {% for field in form.visible_fields %}
+                        <div class="client_info">
+                          {{ field.label_tag }}
+                           {% render_field field class+="form-control" %}
 
-                        {{ field.label_tag }}
-                        {% render_field field class+="form-control" %}
+                        </div>
+                      {% endfor %}
 
-                      </div>
-                    {% endfor %}
                   </div>
 
 
-          <button type="submit" class="action__btn" >Submit</button>
+          <button type="submit" class="action__btn" >Заказать звонок</button>
           </div>
       </form>
       </div>
@@ -449,6 +448,8 @@
       </div>
     </form>
 
+
+{{self.code}}
 
 
 {% endblock %}

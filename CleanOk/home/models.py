@@ -32,6 +32,7 @@ class HomePage(WagtailCaptchaEmailForm, Page):
     landing_page_template = "form/form_page_landing.html"
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
+    code = RichTextField(blank=True)
 
     content = StreamField(
         [
@@ -44,6 +45,7 @@ class HomePage(WagtailCaptchaEmailForm, Page):
 
     content_panels = AbstractEmailForm.content_panels + [
         StreamFieldPanel("content"),
+        FieldPanel('code'),
         FormSubmissionsPanel(),
         FieldPanel('intro', classname="full"),
         InlinePanel('custom_form_fields', label="Form fields"),

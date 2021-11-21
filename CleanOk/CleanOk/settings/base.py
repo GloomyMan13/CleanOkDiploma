@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'search',
     'flex',
     'streams',
-
+    'custom_code',
     'forms',
     'services',
 
