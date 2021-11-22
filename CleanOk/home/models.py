@@ -17,7 +17,9 @@ from streams import blocks
 from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
-
+from wagtail.snippets.models import register_snippet
+from wagtail.core.fields import RichTextField
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 
 # class HomePage(Page):
 #
@@ -26,6 +28,21 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 class FormField(AbstractFormField):
     page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='custom_form_fields')
 
+@register_snippet
+class Footer(models.Model):
+
+    bodytext = RichTextField()
+
+    panels = [
+        FieldPanel('bodytext')
+    ]
+
+    class Meta:
+        verbose_name = "Футер"
+        verbose_name_plural = "Футеры"
+
+    def __str__(self):
+        return "Футер"
 
 class HomePage(WagtailCaptchaEmailForm, Page):
     template = "home/home_page.html"

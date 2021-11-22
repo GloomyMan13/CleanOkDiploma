@@ -187,3 +187,8 @@ WAGTAIL_ADDRESS_MAP_KEY = 'AIzaSyDUEQtZCw1FDYDFdXK6ZEEMEHQSa5KNZOE'
 # Optional
 WAGTAIL_ADDRESS_MAP_ZOOM = 8  # See https://developers.google.com/maps/documentation/javascript/tutorial#MapOptions for more information.
 WAGTAIL_ADDRESS_MAP_LANGUAGE = 'ru'  # See https://developers.google.com/maps/faq#languagesupport for supported languages.
+
+# убирает надпись обновления в админе
+WAGTAIL_ENABLE_UPDATE_CHECK = False
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
