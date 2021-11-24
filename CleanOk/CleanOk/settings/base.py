@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'custom_code',
     'forms',
     'services',
+    'burger_menus',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',

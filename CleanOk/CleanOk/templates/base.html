@@ -1,6 +1,10 @@
 {% load static %}
 {% load static wagtailcore_tags wagtailuserbar %}
 {% load static wagtailuserbar base_tags %}
+{% load static wagtailuserbar burger_menus_tags %}
+
+{% get_menu "burger" as burger %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -65,7 +69,8 @@
 
     <body class="{% block body_class %}{% endblock %}">
     {% block main_navigation %}
-<header class="header container">
+
+    <header class="header container">
       <div class=" header__container">
         <div class="logo">CLEANOK</div>
         <div class="intro__btn-float hidden">
@@ -94,10 +99,32 @@
                 <hr class="burger burger-tow"></hr>
                 <hr class="burger burger-three"></hr>
               </div>
+
           </button>
         </div>
       </div>
     </header>
+
+    <form action="#" class="modal hidden">
+      <div class="nav">
+        <ul class="nav__burger-list">
+          {% for item in burger.menu_items.all %}
+            <li class="nav__item">
+              <a href="{{ item.link }}" class="nav__link link"
+                 {% if item.open_in_new_tab %}
+                   target="_blank"
+                 {% endif %}
+              >{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="divider"><hr></div>
+      <div class="nav__burger-contacts">
+        <p class="footer__contacts_text" >Единая справочная служба</p>
+        <p class="footer__contacts_phone">8 800 333 99 09</p>
+      </div>
+    </form>
     {% endblock %}
         {% wagtailuserbar %}
 
