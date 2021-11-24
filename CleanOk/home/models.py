@@ -18,8 +18,8 @@ from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
-from wagtail.core.fields import RichTextField
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+# from wagtail.core.fields import RichTextField
+# from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 
 # class HomePage(Page):
 #
@@ -46,6 +46,7 @@ class Footer(models.Model):
 
 class HomePage(WagtailCaptchaEmailForm, Page):
     template = "home/home_page.html"
+    # template = "home/textpage.html"
     landing_page_template = "form/form_page_landing.html"
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
@@ -58,14 +59,26 @@ class HomePage(WagtailCaptchaEmailForm, Page):
         null=True,
         blank=True,
     )
+    add_content = StreamField(
+        [
+            ("title_and_text", blocks.TitleAndTextBlock()),
+            ("full_richtext", blocks.RichtextBlock()),
+            ("simple_richtext", blocks.SimpleRichtextBlock()),
+            ("cards", blocks.CardBlock()),
+            ("cta", blocks.CTABlock()),
+        ],
+        null=True,
+        blank=True,
+    )
 
 
     content_panels = AbstractEmailForm.content_panels + [
         StreamFieldPanel("content"),
+        StreamFieldPanel("add_content"),
         FieldPanel('code'),
         FormSubmissionsPanel(),
         FieldPanel('intro', classname="full"),
-        InlinePanel('custom_form_fields', label="Form fields"),
+        InlinePanel('custom_form_fields', label="Контактное поле"),
         FieldPanel('thank_you_text', classname="full"),
         MultiFieldPanel([
             FieldRowPanel([

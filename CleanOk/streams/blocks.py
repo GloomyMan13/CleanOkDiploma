@@ -27,6 +27,26 @@ class TitleAndTextBlock(blocks.StructBlock):
         icon = "edit"
         label = "Title & Text"
 
+class EmployerBlock(blocks.StructBlock):
+    """Блок для описания сотрудника. Картина Текст """
+
+    title = blocks.CharBlock(required=True, help_text="Add your title")
+    text = blocks.RichTextBlock(required=True, help_text="Add additional text")
+    body = RichTextField(blank=True, help_text="Add additional text")
+    img = ImageChooserBlock(required=False)
+    # img = models.ForeignKey(
+    #     "wagtailimages.Image",
+    #     blank=True,
+    #     null=True,
+    #     related_name="+",
+    #     on_delete=models.SET_NULL,
+    # )
+
+    class Meta:  # noqa
+        template = "streams/employer_block.html"
+        icon = "edit"
+        label = "Крточка Сотрудники"
+
 
 class ServicesBlock(blocks.StructBlock): #blocks.StructBlock
     """Блок сервисов"""

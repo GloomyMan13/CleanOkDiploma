@@ -20,7 +20,7 @@ class FlexPage(Page):
     # ]
     content = StreamField(
         [
-            ("title_and_text", blocks.TitleAndTextBlock()),
+            ("employer", blocks.EmployerBlock()),
         ],
         null=True,
         blank=True,
@@ -46,6 +46,6 @@ class FlexPage(Page):
         StreamFieldPanel("content"),
     ]
 
-    class Meta:  # noqa
-        verbose_name = "Flex Page"
-        verbose_name_plural = "Flex Pages"
+    class Meta:
+        verbose_name = "Кастомная Страница"
+        verbose_name_plural = "Кастомная Страница"

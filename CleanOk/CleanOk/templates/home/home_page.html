@@ -381,7 +381,7 @@
         <form action="{% pageurl page %}" method="POST" class="action__form">
           {% csrf_token %}
           <div class="form__wrapper">
-                  <div class="">
+
 
                     {% if form.non_field_errors %}
                       <div class="alert alert-danger" role="alert">
@@ -390,23 +390,24 @@
                         {% endfor %}
                       </div>
                     {% endif %}
-
-                      {% for field in form.visible_fields %}
-                        <div class="client_info">
-                          {{ field.label_tag }}
-                           {% render_field field class+="form-control" %}
-
-                        </div>
-                      {% endfor %}
-
+                  <div class="client_info">
+                    {% render_field form.u0418u043cu044f placeholder="Ваше имя"%}
+                    {% render_field  form.u041du043eu043cu0435u0440_u0442u0435u043bu0435u0444u043eu043du0430 type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"%}
                   </div>
-
-
+                    {% render_field form.email type="text" id="scompany" placeholder="Наименование компании"%}
+                    <div class="client__messege">
+                    {% render_field form.messages  class="smess" name="smassage" id="smassege" cols="47" rows="6" placeholder="Напишите, о чем нам нужно знать"%}
+                    </div>
+                    {% render_field form.wagtailcaptcha%}
           <button type="submit" class="action__btn" >Заказать звонок</button>
           </div>
       </form>
       </div>
       </section>
+
+    {% for block in page.add_content %}
+        {% include_block block %}
+    {% endfor %}
 
     <footer class="footer">
       <container class="footer__wrapper container">
@@ -447,9 +448,6 @@
         <p class="footer__contacts_phone">8 800 333 99 09</p>
       </div>
     </form>
-
-
-{{self.code}}
 
 
 {% endblock %}
