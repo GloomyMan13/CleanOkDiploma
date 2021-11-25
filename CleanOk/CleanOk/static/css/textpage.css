@@ -23,8 +23,12 @@ h2 {
   display: none;
 }
 
+.logo {
+  text-decoration: none;
+}
+
 .header__container {
-  height: 60;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,7 +42,8 @@ h2 {
 
 .fixed {
   width: 1440px;
-  height: 60px;
+  top: 0;
+  height: 60;
   position: fixed;
   z-index: 1555;
   background: #FFFFFF;
@@ -161,6 +166,10 @@ h2 {
   height: 2px;
 }
 
+.intro__image {
+  width: 100%;
+}
+
 .footer {
   background: #E0E3F0;
 }
@@ -177,14 +186,14 @@ h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 244px;
-  margin-top: 74px;
+  margin-top: 64px;
 }
 
 /**              перекрывает текст, как исправить?
  **/
 .footer__info {
   font-family: Roboto;
-  margin-top: 70px;
+  margin-top: 74px;
   margin-left: 137px;
   font-size: 14px;
   line-height: 20px;
@@ -204,7 +213,7 @@ h2 {
 
 .footer__contacts {
   margin-right: 154px;
-  margin-top: 68px;
+  margin-top: 70px;
 }
 
 .footer__contacts_text, .modal__contacts_text {
@@ -242,7 +251,7 @@ h2 {
   width: 360px;
   height: 90%;
   top: 50px;
-  left: 1152px;
+  left: 1124px;
   position: fixed;
   z-index: 2;
   background: #FFFFFF;
@@ -280,11 +289,11 @@ h2 {
   margin: 0 auto;
 }
 
-.text-section_one {
+.section-one {
   margin-top: 110px;
 }
 
-.text-section_tow {
+.section-tow {
   margin-top: 56px;
 }
 
@@ -301,15 +310,15 @@ h2 {
   margin-top: 6px;
 }
 
-.text-section_three {
+.section-three {
   margin-top: 54px;
 }
 
-.text-section_four {
+.section-four {
   margin-top: 40px;
 }
 
-.text-section_four .subtitle {
+.section-four .subtitle {
   margin-top: 30px;
 }
 

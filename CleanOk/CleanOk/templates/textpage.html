@@ -1,13 +1,11 @@
-{% load static %}
-{% load static wagtailcore_tags wagtailuserbar %}
 <!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{%  static 'css/normalize.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./css/textpage.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
       rel="stylesheet"
@@ -20,15 +18,21 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Roboto:wght@400;500&family=Yanone+Kaffeesatz&display=swap"
       rel="stylesheet"
     />
-    <script src="{%  static '/js/modal.js'%}" defer></script>
-    <!-- <script src="./js/table.js" defer></script> -->
+    <script src="./js/modal.js" defer></script>    
+    <script src="./js/nav-float.js" defer></script>
+
     <!-- <script src="./js/scroll.js" defer></script> -->
-    <title>Text Page</title>
+    <title>CLEANOK</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container header__container">
-        <div class="logo">CLEANOK</div>
+    <header class="header container ">
+      <div class="header__container">
+        <div class="logo">
+          <a href="./index.html" class="logo">CLEANOK</a>
+        </div>
+        <div class="intro__btn-float hidden">
+          <a href="./index.html#call_action" class="nav__link-float"> Заказать звонок </a>
+        </div>
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -54,7 +58,7 @@
         </div>
       </div>
     </header>
-    <div class="text-section_one wrapper">
+    <div class="section-one wrapper">
       <h1 class="tittle-one">Шаблон текстовой страницы. h1</h1>
       <p class="text">С 2009 года создаем чистоту на объектах. Подбираем график с учетом пожеланий клиента.</p>
       <p class="text">
@@ -63,7 +67,7 @@
       <p class="text">Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи и предложим оптимальное решение.</p>
     </div>
     
-    <div class="text-section_tow wrapper">
+    <div class="section-tow wrapper">
       <h2 class="tittle-tow">Подзаголовок. h2</h2>
       <p class="text">С 2009 года создаем чистоту на объектах. Подбираем график с учетом пожеланий клиента.
       </p>
@@ -74,14 +78,14 @@
         <p class="image-descr">Подпись к изображению. По необходимости</p>
       </div>
     </div>
-    <div class="text-section_three wrapper">
+    <div class="section-three wrapper">
       <h2 class="tittle-three">Подзаголовок. h2</h2>
       <p class="text">С 2009 года создаем чистоту на объектах. Подбираем график с учетом пожеланий клиента.
       </p>
       <p class="text">Экономим время, деньги и даем отличный результат за счет использования профессиональной техники, экологически безопасных средств, регулярного обучения персонала и оптимизации процесса.</p>
       <p class="text">Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи и предложим оптимальное решение.</p>      
     </div>
-    <div class="text-section_four wrapper">
+    <div class="section-four wrapper">
       <h3 class="title-four">Списки маркированные и нумерованные. h3</h3>
         <p class="subtitle">С 2009 года создаем чистоту на объектах. Подбираем график с учетом пожеланий клиента.</p>
         <ol class="list-numeration">
@@ -166,7 +170,7 @@
         <div class="nav">
           <ul class="nav__burger-list">
             <li class="nav__item">
-              <a href="#" class="nav__link link">Сотрудники</a>
+              <a href="./staff.html" class="nav__link link">Сотрудники</a>
             </li>
             <li class="nav__item">
               <a href="#" class="nav__link link">О компании</a>

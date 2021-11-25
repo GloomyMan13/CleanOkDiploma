@@ -22,19 +22,19 @@
     <script src="./js/main.js" defer></script>
     <script src="./js/swiper.js" defer></script>
     <script src="./js/nav-float.js" defer></script>
-    <script src="./js/btn.js" defer></script>
     <script src="./js/modal.js" defer></script>
     <script src="./js/scroll.js" defer></script>
+    <script src="./js/action.js" defer></script>
   </head>
   <body>
     <header class="header container">
-      <div class=" header__container">
-        <div class="logo">CLEANOK</div>
+      <div class="header__container">
+        <div class="logo">
+          <a href="./index.html" class="logo">CLEANOK</a>
+        </div>
         <div class="intro__btn-float hidden">
-            <a href="#call_action" class="nav__link-float">
-              Заказать звонок
-            </a>
-          </div>
+          <a href="#call_action" class="nav__link-float"> Заказать звонок </a>
+        </div>
         <div class="nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -51,11 +51,11 @@
             </li>
           </ul>
           <button type="button" class="nav__burger">
-              <div class="burger">
-                <hr class="burger burger-one"></hr>
-                <hr class="burger burger-tow"></hr>
-                <hr class="burger burger-three"></hr>
-              </div>
+            <div class="burger">
+              <hr class="burger burger-one" />
+              <hr class="burger burger-tow" />
+              <hr class="burger burger-three" />
+            </div>
           </button>
         </div>
       </div>
@@ -71,13 +71,15 @@
             Отставьте заявку и наш менеджер свяжется с вами
           </p>
           <div class="intro__btn">
-            <a href="#call_action" class="nav__link-btn yakor">Заказать звонок</a>
+            <a href="#call_action" class="nav__link-btn yakor"
+              >Заказать звонок</a
+            >
           </div>
         </div>
         <div class="intro__features">
           <p>
-            Более <a href="#contacts" class="city">60 городов </a><br />по Дальнему
-            Востоку
+            Более <a href="#contacts" class="city">60 городов </a><br />по
+            Дальнему Востоку
           </p>
           <!-- 60 городов гиперссылка -->
           <p>Более 1 000 объектов <br />на обслуживании</p>
@@ -86,7 +88,11 @@
         </div>
       </div>
       <div class="intro__image">
-        <img src="./src/img/main_img.jpg" alt="clean room" />
+        <img
+          class="intro__image"
+          src="./src/img/main_img.jpg"
+          alt="clean room"
+        />
       </div>
     </div>
     <div class="clients container" id="clients">
@@ -435,19 +441,22 @@
       </div>
       <!--  слайдер с сертификатами гиперссылки -->
     </div>
-    <div class="offices " id="contacts">
+    <div class="offices container" id="contacts">
       <div class="map">
-        <img src="./src/img/Map.jpg" alt="map" />
+        <img class="map" src="./src/img/Map.jpg" alt="map" />
       </div>
       <div class="search">
         <form action="get" class="cities">
           <div class="search__city">
-            <input class="search__city-name" placeholder="Введите свой город для поиска"></input>
+            <input
+              class="search__city-name"
+              placeholder="Введите свой город для поиска"
+            />
             <button class="search__city-btn" type="button">
-              <img src="./src/icons/Arrow-Search.png" alt="arrow-search">
+              <img src="./src/icons/Arrow-Search.png" alt="arrow-search" />
             </button>
           </div>
-          <div class="cities-list">            
+          <div class="cities-list">
             <div class="cities-item">
               <p class="cities_name">Хабаровск</p>
               <p class="cities_adress">ул. Серышева, 56</p>
@@ -465,91 +474,133 @@
             </div>
             <div class="cities-item">
               <p class="cities_name">Комсомольск-на-Амуре</p>
-              <p class="cities_adress">ул. Красногвардейская, д. 14, оф. 204.</p>
+              <p class="cities_adress">
+                ул. Красногвардейская, д. 14, оф. 204.
+              </p>
               <p class="cities_phone">8 (4217) 54-68-45</p>
-            </div>            
+            </div>
           </div>
           <div class="gradient"></div>
           <div class="search-info">
             <div class="search-info_content">
               <p class="search-info_text">Единая справочная служба</p>
-              <p class="search-info_phone">  8 800 333 99 09 </p>
+              <p class="search-info_phone">8 800 333 99 09</p>
             </div>
-              <p class="search-info_text-tow">(по России звонок бесплатный)</p>
-            
-            <div class="search-info_mail link"><a href="#" class="search-info_mail link">info@cleanok.ru</a></div>
-            
+            <p class="search-info_text-tow">(по России звонок бесплатный)</p>
+
+            <div class="search-info_mail link">
+              <a href="#" class="search-info_mail link">info@cleanok.ru</a>
+            </div>
           </div>
         </form>
       </div>
     </div>
-    <section class="action" >
+    <section class="action">
       <a id="call_action"></a>
       <div class="about">
         <span class="about_title">оставьте заявку</span>
         <h2 class="about_header">Напишите нам</h2>
-        <article class="about_content">
+        <div class="about_content">
           С 2009 года создаем чистоту на объектах. Подбираем график с учетом
-          пожеланий клиента. <br><br>Экономим время, деньги и даем отличный результат за
-          счет использования профессиональной техники, экологически безопасных
-          средств, регулярного обучения персонала и оптимизации процесса.<br><br>
+          пожеланий клиента. <br /><br />Экономим время, деньги и даем отличный
+          результат за счет использования профессиональной техники, экологически
+          безопасных средств, регулярного обучения персонала и оптимизации
+          процесса.<br /><br />
           Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи
           и предложим оптимальное решение.
-        </article>
+        </div>
       </div>
-      <div  class="action" >
-        <form action="#"  method="post" class="action__form">
+      <div class="action_form">
+        <form action="#" method="post" class="action__form">
           <div class="form__wrapper">
             <div class="client_info">
-              <input type="text" id="sname" placeholder="Ваше имя" />
-              <input type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"/>
+              <div class="enter-name">
+                <input
+                  class="sname"
+                  type="text"
+                  id="sname"
+                  placeholder="Ваше имя"
+                />
+                <div class="error_name hidden">
+                  <p style="margin: 0">Введите ваше имя</p>
+                </div>
+              </div>
+
+              <div class="enter-phone">
+                <input
+                  type="tel"
+                  class="sphone"
+                  id="sphone"
+                  title="Формат: +7 (096) 999 99 99"
+                  placeholder="+7 "
+                  pattern="[0-9]{10}"
+                  required
+                />
+                <div class="error_tel hidden">
+                  <p style="margin: 0">Не верный формат</p>
+                </div>
+              </div>
             </div>
-            <input type="text" id="scompany" placeholder="Наименование компании" />
+            <input
+              type="text"
+              id="scompany"
+              placeholder="Наименование компании"
+            />
             <div class="client__messege">
-              <textarea class="smess" name="smassage" id="smassege" cols="47" rows="6" placeholder="Напишите, о чем нам нужно знать"></textarea>
+              <textarea
+                class="smess"
+                name="smassage"
+                id="smassege"
+                cols="47"
+                rows="6"
+                placeholder="Напишите, о чем нам нужно знать"
+              ></textarea>
             </div>
-            <button class="action__btn" type="button">Заказать звонок</button>
+            <button class="action__btn" type="submit">Заказать звонок</button>
           </div>
         </form>
       </div>
     </section>
     <footer class="footer">
-      <container class="footer__wrapper container">
+      <div class="footer__wrapper container">
         <div class="footer__info">
           <div class="logo">CLEANOK</div>
           <p class="footer__content">
             ООО «Клин Ок» — клининговая компания на Дальнем Востоке Данные
-            юридического лица компании ОГРН, КПП <br>г. Хабаровск, ул. Серышева, 56
+            юридического лица компании ОГРН, КПП <br />г. Хабаровск, ул.
+            Серышева, 56
           </p>
         </div>
         <div class="footer__contacts">
-          <p class="footer__contacts_text" >Единая справочная служба</p>
+          <p class="footer__contacts_text">Единая справочная служба</p>
           <p class="footer__contacts_info">по России звонок бесплатный</p>
           <p class="footer__contacts_phone">8 800 333 99 09</p>
         </div>
-      </container>
+      </div>
     </footer>
     <form action="#" class="modal hidden">
       <div class="nav">
         <ul class="nav__burger-list">
           <li class="nav__item">
-            <a href="#" class="nav__link link">Сотрудники</a>
+            <a href="./staff.html" class="nav__link link">Сотрудники</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link link">О компании</a>
+            <a href="./textpage.html" class="nav__link link">О компании</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link link">Реквизиты</a>
+            <a href="./textpage.html" class="nav__link link">Реквизиты</a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link link">Еще одна страница</a>
+            <a href="./textpage.html" class="nav__link link"
+              >Еще одна страница</a
+            >
           </li>
-        </ul>   
+        </ul>
       </div>
-      <div class="divider"><hr></div>
+      <div class="divider"><hr /></div>
       <div class="nav__burger-contacts">
-        <p class="footer__contacts_text" >Единая справочная служба</p>
-        <p class="footer__contacts_phone">8 800 333 99 09</p>
+        <p class="modal__contacts_text">Единая справочная служба</p>
+        <p class="modal__contacts_phone">8 800 333 99 09</p>
       </div>
     </form>
   </body>

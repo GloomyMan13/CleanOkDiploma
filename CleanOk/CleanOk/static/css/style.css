@@ -23,8 +23,12 @@ h2 {
   display: none;
 }
 
+.logo {
+  text-decoration: none;
+}
+
 .header__container {
-  height: 60;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,7 +42,8 @@ h2 {
 
 .fixed {
   width: 1440px;
-  height: 60px;
+  top: 0;
+  height: 60;
   position: fixed;
   z-index: 1555;
   background: #FFFFFF;
@@ -47,15 +52,6 @@ h2 {
 }
 
 .intro__btn-float {
-  width: 150px;
-  height: 30px;
-  background-color: #FF785F;
-  font-family: Roboto;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  border: none;
-  margin-left: 550px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,6 +61,17 @@ h2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 150px;
+  height: 30px;
+  background-color: #FF785F;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 550px;
+  cursor: pointer;
 }
 
 .nav__link-float {
@@ -159,6 +166,10 @@ h2 {
   height: 2px;
 }
 
+.intro__image {
+  width: 100%;
+}
+
 .intro {
   display: -ms-grid;
   display: grid;
@@ -193,8 +204,9 @@ h2 {
 }
 
 .intro__image {
-  margin-top: -55px;
+  margin-top: -28px;
   z-index: -1;
+  width: 740px;
 }
 
 .intro__btn {
@@ -217,6 +229,7 @@ h2 {
   line-height: 25px;
   letter-spacing: 0.02em;
   border: none;
+  border-radius: 3px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -654,7 +667,7 @@ sup {
   width: 360px;
   height: 90%;
   top: 50px;
-  left: 1152px;
+  left: 1124px;
   position: fixed;
   z-index: 2;
   background: #FFFFFF;
@@ -675,7 +688,7 @@ sup {
 .divider {
   color: #E0E3F0;
   opacity: 0.3;
-  margin-top: 400px;
+  margin-top: 380px;
 }
 
 .nav__burger-contacts {
@@ -683,26 +696,8 @@ sup {
   text-align: center;
 }
 
-.nav__burger-contacts .footer__contacts_text {
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 11px;
-  line-height: 13px;
-  text-align: center;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #041133;
-  opacity: 0.7;
-}
-
-.nav__burger-contacts .footer__contacts_phone {
-  margin-top: 20px;
-  font-family: Roboto;
-  font-weight: 500;
+.modal__contacts_phone {
   font-size: 16px;
-  line-height: 25px;
-  letter-spacing: 0.02em;
-  color: #6783FE;
 }
 
 .sertificates__wrapper {
@@ -854,19 +849,19 @@ sup {
 
 .offices {
   position: relative;
-  height: 537px;
+  min-height: 537px;
   margin: 0 auto;
   margin-top: -65px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 1440px;
 }
 
 .map {
+  width: 100%;
   position: absolute;
   z-index: -1;
-  height: 530px;
+  min-height: 530px;
 }
 
 .search {
@@ -877,7 +872,7 @@ sup {
   left: 942px;
   top: 20px;
   width: 363px;
-  height: 490px;
+  min-height: 490px;
   z-index: 2;
   background: #ffff;
 }
@@ -942,7 +937,6 @@ sup {
   -webkit-box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
           box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
   border-radius: 5px;
-  margin: 0 0;
   padding: 20px;
   padding-left: 26px;
   height: 324px;
@@ -982,7 +976,7 @@ sup {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 18px;
   letter-spacing: 0.02em;
   color: #041133;
   opacity: 0.8;
@@ -1056,12 +1050,15 @@ sup {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .about {
   width: 363px;
   min-height: 405px;
-  margin-left: 366px;
   margin-top: 60px;
 }
 
@@ -1111,7 +1108,6 @@ sup {
   font-size: 14px;
   line-height: 20px;
   display: flex;
-  color: #041133;
 }
 
 .client_info {
@@ -1175,6 +1171,11 @@ input:focus {
   resize: none;
 }
 
+input, textarea, .scompany {
+  border: 1px solid #E0E3F0;
+  border-radius: 3px;
+}
+
 .action__btn {
   margin-top: 20px;
   background: #6783FE;
@@ -1193,6 +1194,35 @@ input:focus {
   opacity: 1;
 }
 
+.invalid {
+  border: 2px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+.error_name, .error_tel {
+  background-color: #fff;
+  color: #000;
+  width: 171px;
+  height: 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.enter-phone, .enter-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .footer {
   background: #E0E3F0;
 }
@@ -1209,14 +1239,14 @@ input:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 244px;
-  margin-top: 74px;
+  margin-top: 64px;
 }
 
 /**              перекрывает текст, как исправить?
  **/
 .footer__info {
   font-family: Roboto;
-  margin-top: 70px;
+  margin-top: 74px;
   margin-left: 137px;
   font-size: 14px;
   line-height: 20px;
@@ -1236,10 +1266,10 @@ input:focus {
 
 .footer__contacts {
   margin-right: 154px;
-  margin-top: 68px;
+  margin-top: 70px;
 }
 
-.footer__contacts_text {
+.footer__contacts_text, .modal__contacts_text {
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;
@@ -1256,7 +1286,7 @@ input:focus {
   color: rgba(4, 17, 51, 0.7);
 }
 
-.footer__contacts_phone {
+.footer__contacts_phone, .modal__contacts_phone {
   font-family: Roboto;
   font-weight: 500;
   font-size: 22px;
@@ -1264,5 +1294,9 @@ input:focus {
   letter-spacing: 0.02em;
   color: #6783FE;
   margin-top: 20px;
+}
+
+.modal__contacts_phone {
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */
