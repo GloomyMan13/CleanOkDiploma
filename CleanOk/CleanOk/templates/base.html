@@ -6,9 +6,8 @@
 {% get_menu "burger" as burger %}
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,8 +20,6 @@
                 {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
 
@@ -49,9 +46,9 @@
         <script  src="{%  static 'js/main.js' %}" defer></script>
         <script  src="{%  static 'js/swiper.js' %}" defer></script>
         <script  src="{%  static 'js/nav-float.js' %}" defer></script>
-        <script  src="{%  static 'js/btn.js' %}" defer></script>
         <script  src="{%  static 'js/modal.js' %}" defer></script>
         <script  src="{%  static 'js/scroll.js' %}" defer></script>
+        <script src="{% static 'js/action.js' %}" defer></script>
 
         <!-- Smartsupp Live Chat script -->
         <script type="text/javascript">
@@ -94,12 +91,11 @@
             </li>
           </ul>
           <button type="button" class="nav__burger">
-              <div class="burger">
-                <hr class="burger burger-one"></hr>
-                <hr class="burger burger-tow"></hr>
-                <hr class="burger burger-three"></hr>
-              </div>
-
+            <div class="burger">
+              <hr class="burger burger-one"></hr>
+              <hr class="burger burger-tow"></hr>
+              <hr class="burger burger-three"></hr>
+            </div>
           </button>
         </div>
       </div>
@@ -126,20 +122,10 @@
       </div>
     </form>
     {% endblock %}
-        {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
-        {% footer_tag %}
-        {# Global javascript #}
-        <script  src="{%  static 'js/main.js' %}" defer></script>
-        <script  src="{%  static 'js/swiper.js' %}" defer></script>
-        <script  src="{%  static 'js/nav-float.js' %}" defer></script>
-        <script  src="{%  static 'js/btn.js' %}" defer></script>
-        <script  src="{%  static 'js/modal.js' %}" defer></script>
-        <script  src="{%  static 'js/scroll.js' %}" defer></script>
+    {# Place for page template #}
+    {% block content %}{% endblock %}
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
+    {% footer_tag %}
     </body>
 </html>
