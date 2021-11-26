@@ -68,63 +68,6 @@ from wagtail.snippets.models import register_snippet
 from modelcluster.models import ClusterableModel
 from django.db import models
 
-
-class CodeItem(Orderable):
-    # link_title = models.CharField(
-    #     blank=False,
-    #     null=False,
-    #     default=None,
-    #     max_length=50
-    # )
-    # link_page = models.ForeignKey(
-    #     "wagtailcore.Page",
-    #     null=False,
-    #     blank=False,
-    #     default=None,
-    #     related_name="+",
-    #     on_delete=models.CASCADE,
-    # )
-    # open_in_new_tab = models.BooleanField(
-    #     default=False,
-    #     blank=True
-    # )
-
-    page = ParentalKey("CustomCode", related_name="code_items")
-    css_code = RichTextField()
-    js_code = RichTextField()
-
-
-    panels = [
-        FieldPanel('css_code'),
-        FieldPanel('js_code'),
-    ]
-
-    # panel = [
-    #     FieldPanel("link_title"),
-    #     PageChooserPanel("link_page"),
-    # ]
-
-    # @property
-    # def link(self):
-    #     if self.link_page is not None:
-    #         return self.link_page.url
-    #     # TODO: logging
-    #     return HttpResponseNotFound("Something going wrong\nPage under maintaince")
-
-    @property
-    def code_js(self):
-        if self.js_code is not None:
-            return self.js_code
-        else:
-            return "No js"
-
-    @property
-    def code_css(self):
-        if self.css_code is not None:
-            return self.css_code
-        else:
-            return "No css"
-
 # @register_snippet
 # class Menu(ClusterableModel):
 #     """Main clusterable menu"""
@@ -149,18 +92,21 @@ class CustomCode(ClusterableModel):
 
     title = models.CharField(max_length=50)
     slug = AutoSlugField(populate_from="title", editable=True)
-    name_file = models.CharField(max_length=50, default="customeeer.js")
-    file = models.FileField(upload_to="js/", default="customer.js")
+    js_name_file = models.CharField(max_length=50, default="customer.js")
+    js_file = models.FileField(upload_to="js/", default="customer.js")
+    css_name_file = models.CharField(max_length=50, default="customer.css")
+    css_file = models.FileField(upload_to="js/", default="customer.css")
 
 
     panels = [
         MultiFieldPanel([
             FieldPanel("title"),
             FieldPanel("slug"),
-            FieldPanel("name_file"),
-            FieldPanel("file"),
+            FieldPanel("js_name_file"),
+            FieldPanel("js_file"),
+            FieldPanel("css_name_file"),
+            FieldPanel("css_file"),
         ], heading="Code"),
-        InlinePanel("code_items", label="Code Item")
     ]
 
     def __str__(self):
