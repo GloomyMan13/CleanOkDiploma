@@ -44,6 +44,8 @@ class Footer(models.Model):
     def __str__(self):
         return "Футер"
 
+
+
 class HomePage(WagtailCaptchaEmailForm, Page):
     template = "home/home_page.html"
     # template = "home/textpage.html"

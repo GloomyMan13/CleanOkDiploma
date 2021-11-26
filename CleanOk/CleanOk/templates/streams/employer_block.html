@@ -1,5 +1,16 @@
 {% load wagtailcore_tags wagtailimages_tags %}
+{% image self.img fill-320x240 as employer_img%}
+<div class="staff-wrapper">
+        <div class="staff-photo">
+            <img src="{{ employer_img.url }}" alt="{{ employer_img.alt }}" class="staff-photo" />
+        </div>
+        <div class="staff-info">
+          <div class="staff-name">{{self.name}}</div>
+          <!-- <div class="sername">Фамилия</div> -->
+          <div class="position">{{self.position}}</div>
+          <div class="staff-about">
+            {{self.text}}
+          </div>
+        </div>
+</div>
 
-            <div class="title-one">{{ self.title }}</div>
-            {% image self.img fill-320x240 %}
-            <div class="content-one">{{ self.text }}</div>

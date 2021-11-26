@@ -1,10 +1,16 @@
 {% load static %}
 {% load static wagtailcore_tags wagtailuserbar %}
 {% load static wagtailuserbar base_tags %}
+{% load static wagtailuserbar burger_menus_tags %}
+{% load static wagtailuserbar custom_code_tags %}
+
+{% get_menu "burger" as burger %}
+{% get_code "code" as code %}
+
+
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
     <head>
-        <meta charset="utf-8" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,8 +23,6 @@
                 {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
 
@@ -29,6 +33,8 @@
         <link rel="stylesheet" type="text/css" href="{%  static 'css/normalize.css' %}" />
         <link rel="icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}"/>
         <link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{%  static 'css/staff.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{%  static 'css/custom.css' %}" />
         <link
           href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap"
           rel="stylesheet"
@@ -45,27 +51,29 @@
         <script  src="{%  static 'js/main.js' %}" defer></script>
         <script  src="{%  static 'js/swiper.js' %}" defer></script>
         <script  src="{%  static 'js/nav-float.js' %}" defer></script>
-        <script  src="{%  static 'js/btn.js' %}" defer></script>
         <script  src="{%  static 'js/modal.js' %}" defer></script>
         <script  src="{%  static 'js/scroll.js' %}" defer></script>
+        <script src="{% static 'js/action.js' %}" defer></script>
+        <script type="text/javascript" src="../media/js/{{code.name_file}}" defer></script>
+
+        <script type="text/javascript">{{code.javascript}}</script>
+        <script>
+              {% for item in code.code_items.all %}
+                {{item.js_code}}
+              {% endfor %}
+        </script>
+
+
 
         <!-- Smartsupp Live Chat script -->
-        <script type="text/javascript">
-        var _smartsupp = _smartsupp || {};
-        _smartsupp.key = '22e2bf67e4015fc587d9c18a2da9cf3b3623474d';
-        window.smartsupp||(function(d) {
-          var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-          s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-          c.type='text/javascript';c.charset='utf-8';c.async=true;
-          c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-        })(document);
-        </script>
+
 
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
     {% block main_navigation %}
-<header class="header container">
+
+    <header class="header container">
       <div class=" header__container">
         <div class="logo">CLEANOK</div>
         <div class="intro__btn-float hidden">
@@ -89,30 +97,42 @@
             </li>
           </ul>
           <button type="button" class="nav__burger">
-              <div class="burger">
-                <hr class="burger burger-one"></hr>
-                <hr class="burger burger-tow"></hr>
-                <hr class="burger burger-three"></hr>
-              </div>
+            <div class="burger">
+              <hr class="burger burger-one"></hr>
+              <hr class="burger burger-tow"></hr>
+              <hr class="burger burger-three"></hr>
+            </div>
           </button>
         </div>
       </div>
     </header>
+
+    <form action="#" class="modal hidden">
+      <div class="nav">
+        <ul class="nav__burger-list">
+          {% for item in burger.menu_items.all %}
+            <li class="nav__item">
+              <a href="{{ item.link }}" class="nav__link link"
+                 {% if item.open_in_new_tab %}
+                   target="_blank"
+                 {% endif %}
+              >{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="divider"><hr></div>
+      <div class="nav__burger-contacts">
+        <p class="footer__contacts_text" >Единая справочная служба</p>
+        <p class="footer__contacts_phone">8 800 333 99 09</p>
+      </div>
+    </form>
     {% endblock %}
-        {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
-        {% footer_tag %}
-        {# Global javascript #}
-        <script  src="{%  static 'js/main.js' %}" defer></script>
-        <script  src="{%  static 'js/swiper.js' %}" defer></script>
-        <script  src="{%  static 'js/nav-float.js' %}" defer></script>
-        <script  src="{%  static 'js/btn.js' %}" defer></script>
-        <script  src="{%  static 'js/modal.js' %}" defer></script>
-        <script  src="{%  static 'js/scroll.js' %}" defer></script>
+    {# Place for page template #}
+    {% block content %}
+    {% endblock %}
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
+    {% footer_tag %}
     </body>
 </html>
