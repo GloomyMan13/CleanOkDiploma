@@ -94,6 +94,63 @@ class HomePage(WagtailCaptchaEmailForm, Page):
     def get_form_fields(self):
         return self.custom_form_fields.all()
 
+    def get_context(self, request, *args, **kwargs):
+        """Adding custom stuff to our context."""
+        context = super().get_context(request, *args, **kwargs)
+        context["posts"] = CityPage.objects.live().public()
+        return context
+
+class CityPage(Page):
+    """В моделе описывается гиперссылка 60 городов"""
+    template = "home/city_page.html"
+    body = RichTextField(blank=True)
+
+    name_city = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите имя города',
+    )
+    address = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите адрес',
+    )
+    phone_number = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите номер телефона',
+    )
+    blog_image = models.ForeignKey(
+        "wagtailimages.Image",
+        blank=True,
+        null=True,
+        related_name="+",
+        on_delete=models.SET_NULL,
+    )
+
+    content = StreamField(
+        [
+            ("title_and_text", blocks.TitleAndTextBlock()),
+            ("full_richtext", blocks.RichtextBlock()),
+            ("simple_richtext", blocks.SimpleRichtextBlock()),
+            ("cards", blocks.CardBlock()),
+            ("cta", blocks.CTABlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
+    content_panels = Page.content_panels + [
+        FieldPanel("name_city"),
+        FieldPanel("address"),
+        FieldPanel("phone_number"),
+        ImageChooserPanel("blog_image"),
+        StreamFieldPanel("content"),
+    ]
+
     # def get_context(self, request, *args, **kwargs):
     #     """Adding custom stuff to our context."""
     #     # context = super().get_context(request, *args, **kwargs)

@@ -319,26 +319,13 @@
             </button>
           </div>
           <div class="cities-list">
+            {% for post in posts %}
             <div class="cities-item">
-              <p class="cities_name">Хабаровск</p>
-              <p class="cities_adress">ул. Серышева, 56</p>
-              <p class="cities_phone">+7 (4212) 616 649, +7 (4212) 770 333</p>
+              <p class="cities_name">{{post.name_city}}</p>
+              <p class="cities_adress">{{post.address}}</p>
+              <p class="cities_phone">{{post.phone_number}}</p>
             </div>
-            <div class="cities-item">
-              <p class="cities_name">Петропавловск-Камчатский</p>
-              <p class="cities_adress">ул.Максутова, д. 42, оф. 44</p>
-              <p class="cities_phone">8 (4152) 42 63 14, 8 914 020 38 08</p>
-            </div>
-            <div class="cities-item">
-              <p class="cities_name">Якутск</p>
-              <p class="cities_adress">ул. Орджонекидзе, д. 20, оф. 315</p>
-              <p class="cities_phone">8 914 288 88 84</p>
-            </div>
-            <div class="cities-item">
-              <p class="cities_name">Комсомольск-на-Амуре</p>
-              <p class="cities_adress">ул. Красногвардейская, д. 14, оф. 204.</p>
-              <p class="cities_phone">8 (4217) 54-68-45</p>
-            </div>
+            {% endfor %}
           </div>
           <div class="gradient"></div>
           <div class="search-info">
@@ -354,7 +341,6 @@
         </form>
       </div>
     </div>
-
     <section class="action">
       <a id="call_action"></a>
       <div class="about">
