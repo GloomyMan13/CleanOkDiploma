@@ -41,6 +41,7 @@ class MenuItem(Orderable):
         PageChooserPanel("link_page"),
         FieldPanel("open_in_new_tab"),
     ]
+
     @property
     def link(self):
         if self.link_page is not None:
@@ -55,6 +56,43 @@ class MenuItem(Orderable):
         else:
             return "Blank title"
 
+
+class MenuFooter(Orderable):
+
+    page = ParentalKey(
+        "Menu",
+        related_name="menu_footer",
+        on_delete=models.CASCADE
+    )
+
+    footer_phone = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    footer_text = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    panels = [
+        FieldPanel("footer_text"),
+        FieldPanel("footer_phone")
+    ]
+
+    @property
+    def phone(self):
+        if self.footer_phone is not None:
+            return self.footer_phone
+        return ""
+
+    @property
+    def text(self):
+        if self.footer_text is not None:
+            return self.footer_text
+        return ""
+
+
 @register_snippet
 class Menu(ClusterableModel):
     """Main clusterable menu"""
@@ -65,10 +103,15 @@ class Menu(ClusterableModel):
     panels = [
         MultiFieldPanel([
             FieldPanel("title"),
-            FieldPanel("slug"),
+            FieldPanel("slug")
         ], heading="Menu"),
-        InlinePanel("menu_items", label="Menu Item")
+        InlinePanel("menu_items", label="Menu Item"),
+        InlinePanel("menu_footer", label="Menu Footer")
     ]
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Бургер-меню"
+        verbose_name_plural = "Бургер-меню"
