@@ -101,7 +101,7 @@
     <form action="#" class="modal hidden">
       <div class="nav">
         <ul class="nav__burger-list">
-          {% for item in burger.menu_items.all %}
+            {% for item in burger.menu_items.all %}
             <li class="nav__item">
               <a href="{{ item.link }}" class="nav__link link"
                  {% if item.open_in_new_tab %}
@@ -113,9 +113,12 @@
         </ul>
       </div>
       <div class="divider"><hr></div>
-      <div class="nav__burger-contacts">
-        <p class="footer__contacts_text" >Единая справочная служба</p>
-        <p class="footer__contacts_phone">8 800 333 99 09</p>
+        <div class="nav__burger-contacts">
+          {% for item in burger.menu_footer.all %}
+            <p class="modal__contacts_text">{{ item.text }}</p>
+            <p class="modal__contacts_phone">{{ item.phone }}</p>
+          {% endfor %}
+        </div>
       </div>
     </form>
     {% endblock %}
