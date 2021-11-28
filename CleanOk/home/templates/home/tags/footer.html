@@ -1,9 +1,21 @@
 {% load wagtailcore_tags %}
 
 <footer>
-    <hr />
-    {{ footer.bodytext|richtext }}
     <container class="footer__wrapper container">
+    <hr />
+        <div class="footer__info">
+    {{ footerl.bodytext|richtext }}
+            </div>
+     <div class="footer__contacts">
+    {{ footerr.bodytext|richtext }}
+            </div>
+    </container>
+</footer>
+
+
+
+
+<!-- <container class="footer__wrapper container">
         <div class="footer__info">
           <div class="logo">CLEANOK а этот из кода</div>
           <p class="footer__content">
@@ -17,4 +29,3 @@
           <p class="footer__contacts_phone">8 800 333 99 09</p>
         </div>
       </container>
-</footer>

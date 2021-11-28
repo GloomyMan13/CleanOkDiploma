@@ -1,4 +1,4 @@
-from home.models import Footer
+from home.models import Footer, Footerr
 
 from django import template
 
@@ -10,5 +10,6 @@ def footer_tag(context):
 
     return {
         'request': context['request'],
-        'footer': Footer.objects.first()
+        'footerr': Footerr.objects.first(),
+        'footerl': Footer.objects.first()
     }

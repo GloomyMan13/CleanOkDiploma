@@ -28,7 +28,11 @@
         </div>
       </div>
       <div class="intro__image">
-        <img src="./static/src/img/main_img.jpg" alt="clean room" />
+        <img
+          class="intro__image"
+          src="./static/src/img/main_img.jpg"
+          alt="clean room"
+        />
       </div>
     </div>
     <div class="clients container" id="clients">
@@ -193,7 +197,10 @@
               <div class="service-four__wrapper">
                 <div>
                   <div class="icon">
-                    <img src="./static/src/icons/service4/heating.png" alt="heating" />
+                    <img
+                      src="./static/src/icons/service4/heating.png"
+                      alt="heating"
+                    />
                   </div>
                   <div class="content"><p>Теплоснабжение</p></div>
                 </div>
@@ -260,19 +267,31 @@
             <div class="service-five__info">
               <!-- <div class="service-five__content"> -->
               <div class="icon">
-                <img src="./static/src/icons/service5/parts.png" alt="parts" />
+                <img
+                  src="./static/src/icons/service5/parts.png"
+                  alt="parts"
+                />
               </div>
               <div class="title">Запчасти;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/materials.png" alt="equipment" />
+                <img
+                  src="./static/src/icons/service5/materials.png"
+                  alt="equipment"
+                />
               </div>
               <div class="title">Расходные материалы;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/equipment.png" alt="materials" />
+                <img
+                  src="./static/src/icons/service5/equipment.png"
+                  alt="materials"
+                />
               </div>
               <div class="title">Оборудование и монтаж;</div>
               <div class="icon">
-                <img src="./static/src/icons/service5/office.png" alt="office" />
+                <img
+                  src="./static/src/icons/service5/office.png"
+                  alt="office"
+                />
               </div>
               <div class="title">Общее офисное снабжение.</div>
               <!-- </div> -->
@@ -291,32 +310,22 @@
       <div class="search">
         <form action="get" class="cities">
           <div class="search__city">
-            <input class="search__city-name" placeholder="Введите свой город для поиска"></input>
+            <input
+              class="search__city-name"
+              placeholder="Введите свой город для поиска"
+            />
             <button class="search__city-btn" type="button">
-              <img src="./static/src/icons/Arrow-Search.png"alt="arrow-search">
+              <img src="./static/src/icons/Arrow-Search.png" alt="arrow-search">
             </button>
           </div>
           <div class="cities-list">
+            {% for post in posts %}
             <div class="cities-item">
-              <p class="cities_name">Хабаровск</p>
-              <p class="cities_adress">ул. Серышева, 56</p>
-              <p class="cities_phone">+7 (4212) 616 649, +7 (4212) 770 333</p>
+              <p class="cities_name">{{post.name_city}}</p>
+              <p class="cities_adress">{{post.address}}</p>
+              <p class="cities_phone">{{post.phone_number}}</p>
             </div>
-            <div class="cities-item">
-              <p class="cities_name">Петропавловск-Камчатский</p>
-              <p class="cities_adress">ул.Максутова, д. 42, оф. 44</p>
-              <p class="cities_phone">8 (4152) 42 63 14, 8 914 020 38 08</p>
-            </div>
-            <div class="cities-item">
-              <p class="cities_name">Якутск</p>
-              <p class="cities_adress">ул. Орджонекидзе, д. 20, оф. 315</p>
-              <p class="cities_phone">8 914 288 88 84</p>
-            </div>
-            <div class="cities-item">
-              <p class="cities_name">Комсомольск-на-Амуре</p>
-              <p class="cities_adress">ул. Красногвардейская, д. 14, оф. 204.</p>
-              <p class="cities_phone">8 (4217) 54-68-45</p>
-            </div>
+            {% endfor %}
           </div>
           <div class="gradient"></div>
           <div class="search-info">
@@ -332,37 +341,6 @@
         </form>
       </div>
     </div>
-    <section class="action" >
-      <a id="call_action"></a>
-      <div class="about">
-        <span class="about_title">оставьте заявку</span>
-        <h2 class="about_header">Напишите нам</h2>
-        <article class="about_content">
-          С 2009 года создаем чистоту на объектах. Подбираем график с учетом
-          пожеланий клиента. <br><br>Экономим время, деньги и даем отличный результат за
-          счет использования профессиональной техники, экологически безопасных
-          средств, регулярного обучения персонала и оптимизации процесса.<br><br>
-          Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи
-          и предложим оптимальное решение.
-        </article>
-      </div>
-      <div class="action">
-        <form action="#"  method="post" class="action__form">
-          <div class="form__wrapper">
-            <div class="client_info">
-              <input type="text" id="sname" placeholder="Ваше имя" />
-              <input type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"/>
-            </div>
-            <input type="text" id="scompany" placeholder="Наименование компании" />
-            <div class="client__messege">
-              <textarea class="smess" name="smassage" id="smassege" cols="47" rows="6" placeholder="Напишите, о чем нам нужно знать"></textarea>
-            </div>
-            <button class="action__btn" type="button">Заказать звонок</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
     <section class="action">
       <a id="call_action"></a>
       <div class="about">
@@ -377,33 +355,31 @@
           и предложим оптимальное решение.
         </article>
       </div>
-      <div class="action">
+      <div class="action_form">
         <form action="{% pageurl page %}" method="POST" class="action__form">
           {% csrf_token %}
           <div class="form__wrapper">
-
-
-                    {% if form.non_field_errors %}
-                      <div class="alert alert-danger" role="alert">
-                        {% for error in form.non_field_errors %}
-                          {{ error }}
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  <div class="client_info">
-                    {% render_field form.u0418u043cu044f placeholder="Ваше имя"%}
-                    {% render_field  form.u041du043eu043cu0435u0440_u0442u0435u043bu0435u0444u043eu043du0430 type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"%}
-                  </div>
-                    {% render_field form.email type="text" id="scompany" placeholder="Наименование компании"%}
-                    <div class="client__messege">
-                    {% render_field form.messages  class="smess" name="smassage" id="smassege" cols="47" rows="6" placeholder="Напишите, о чем нам нужно знать"%}
-                    </div>
-                    {% render_field form.wagtailcaptcha%}
-          <button type="submit" class="action__btn" >Заказать звонок</button>
+            {% if form.non_field_errors %}
+              <div class="alert alert-danger" role="alert">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="client_info">
+              {% render_field form.u0418u043cu044f placeholder="Ваше имя"%}
+              {% render_field  form.u041du043eu043cu0435u0440_u0442u0435u043bu0435u0444u043eu043du0430 type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"%}
+            </div>
+            {% render_field form.email type="text" id="scompany" placeholder="Наименование компании"%}
+            <div class="client__messege">
+              {% render_field form.messages  class="smess" name="smassage" id="smassege" cols="47" rows="6" placeholder="Напишите, о чем нам нужно знать"%}
+            </div>
+            {% render_field form.wagtailcaptcha%}
+            <button type="submit" class="action__btn" >Заказать звонок</button>
           </div>
-      </form>
+        </form>
       </div>
-      </section>
+    </section>
 
     {% for block in page.add_content %}
         {% include_block block %}
@@ -425,29 +401,6 @@
         </div>
       </container>
     </footer>
-    <form action="#" class="modal hidden">
-      <div class="nav">
-        <ul class="nav__burger-list">
-          <li class="nav__item">
-            <a href="#" class="nav__link link">Сотрудники</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link link">О компании</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link link">Реквизиты</a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link link">Еще одна страница</a>
-          </li>
-        </ul>
-      </div>
-      <div class="divider"><hr></div>
-      <div class="nav__burger-contacts">
-        <p class="footer__contacts_text" >Единая справочная служба</p>
-        <p class="footer__contacts_phone">8 800 333 99 09</p>
-      </div>
-    </form>
 
 
 {% endblock %}

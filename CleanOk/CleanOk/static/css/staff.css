@@ -1,0 +1,67 @@
+.staff {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.staff-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 1000px;
+}
+
+.staff-photo {
+  width: 260px;
+  height: 290px;
+}
+
+.staff-info {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.staff-name, .position {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: rgba(4, 17, 51, 0.7);
+  text-align: left;
+}
+
+.position {
+  font-size: 16px;
+  margin-top: -15px;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6783FE;
+}
+
+.staff-about {
+  font-family: Roboto;
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.7);
+  opacity: 0.8;
+  text-align: left;
+}
+/*# sourceMappingURL=staff.css.map */

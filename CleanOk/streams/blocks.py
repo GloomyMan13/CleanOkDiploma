@@ -30,9 +30,10 @@ class TitleAndTextBlock(blocks.StructBlock):
 class EmployerBlock(blocks.StructBlock):
     """Блок для описания сотрудника. Картина Текст """
 
-    title = blocks.CharBlock(required=True, help_text="Add your title")
-    text = blocks.RichTextBlock(required=True, help_text="Add additional text")
-    body = RichTextField(blank=True, help_text="Add additional text")
+    name = blocks.CharBlock(required=True, help_text="Введите ФИО сотрудника")
+    position =  blocks.CharBlock(required=True, help_text="Введите должность сотрудника")
+    text = blocks.RichTextBlock(required=False, help_text="Введите дополнительный текст")
+    # body = RichTextField(blank=True, help_text="Add additional text")
     img = ImageChooserBlock(required=False)
     # img = models.ForeignKey(
     #     "wagtailimages.Image",
