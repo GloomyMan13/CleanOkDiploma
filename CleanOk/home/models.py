@@ -40,11 +40,11 @@ class Footer(models.Model):
     ]
 
     class Meta:
-        verbose_name = "Футер"
-        verbose_name_plural = "Футеры"
+        verbose_name = "подвал левый"
+        verbose_name_plural = "подвал левый"
 
     def __str__(self):
-        return "Футер"
+        return "подвал левый"
 
 @register_snippet
 class Footerr(models.Model):
