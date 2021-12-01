@@ -2,7 +2,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block content %}
 {{ self.custom_title }}
-{{self.name_city}}
 {% for block in self.content %}
     {% include_block block %}
 {% endfor %}

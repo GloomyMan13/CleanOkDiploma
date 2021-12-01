@@ -1,0 +1,8 @@
+/media
+*.pyc
+venv
+/venv
+venv/
+/venv/
+/__pycache__/
+/.github/

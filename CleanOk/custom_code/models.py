@@ -21,7 +21,7 @@ class CustomCode(ClusterableModel):
     js_name_file = models.CharField(max_length=50, default="customer.js")
     js_file = models.FileField(upload_to="js/", default="customer.js")
     css_name_file = models.CharField(max_length=50, default="customer.css")
-    css_file = models.FileField(upload_to="js/", default="customer.css")
+    css_file = models.FileField(upload_to="css/", default="customer.css")
 
 
     panels = [
@@ -40,5 +40,5 @@ class CustomCode(ClusterableModel):
 
     class Meta:
 
-        verbose_name = "Добавить Стиль css"
-        verbose_name_plural = "Добавить Стили css"
+        verbose_name = "Добавить Дополнительный код"
+        verbose_name_plural = "Добавить Дополнительный код"

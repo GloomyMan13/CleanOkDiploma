@@ -1,11 +1,27 @@
 {% load wagtailcore_tags %}
 
-<footer>
-    <hr />
-    {{ footer.bodytext|richtext }}
-    <container class="footer__wrapper container">
+
+<footer class="footer">
+      <container class="footer__wrapper container">
         <div class="footer__info">
-          <div class="logo">CLEANOK а этот из кода</div>
+          <div class="logo">CLEANOK</div>
+          <p class="footer__content">
+            {{ footerl.bodytext|richtext }}
+          </p>
+        </div>
+
+        </div>
+        <div class="footer__contacts">
+          <p class="footer__contacts_text" >{{ footerr.bodytext|richtext }}</p>
+        </div>
+      </container>
+
+
+<!-- код Светы
+<footer class="footer">
+      <container class="footer__wrapper container">
+        <div class="footer__info">
+          <div class="logo">CLEANOK</div>
           <p class="footer__content">
             ООО «Клин Ок» — клининговая компания на Дальнем Востоке Данные
             юридического лица компании ОГРН, КПП <br>г. Хабаровск, ул. Серышева, 56
@@ -17,4 +33,4 @@
           <p class="footer__contacts_phone">8 800 333 99 09</p>
         </div>
       </container>
-</footer>
+    </footer>

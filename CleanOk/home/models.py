@@ -18,6 +18,8 @@ from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
 # from wagtail.core.fields import RichTextField
 # from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 
@@ -38,11 +40,71 @@ class Footer(models.Model):
     ]
 
     class Meta:
-        verbose_name = "Футер"
-        verbose_name_plural = "Футеры"
+        verbose_name = "подвал левый"
+        verbose_name_plural = "подвал левый"
 
     def __str__(self):
-        return "Футер"
+        return "подвал левый"
+
+@register_snippet
+class Footerr(models.Model):
+
+    bodytext = RichTextField()
+
+    panels = [
+        FieldPanel('bodytext')
+    ]
+
+    class Meta:
+        verbose_name = "подвал правый"
+        verbose_name_plural = "подвал правый"
+
+    def __str__(self):
+        return "подвал правый"
+
+@register_snippet
+class Address(models.Model):
+
+    name_city = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите имя города',
+    )
+    address = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите адрес',
+    )
+    phone_number = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        help_text='Напишите номер телефона',
+    )
+
+    panels = [
+        FieldPanel("name_city"),
+        FieldPanel("address"),
+        FieldPanel("phone_number"),
+    ]
+
+    class Meta:
+        verbose_name = "адреса карты"
+        verbose_name_plural = "адреса карты"
+
+    def __str__(self):
+        return self.name_city
+
+class Addresses(Page):
+    def serve(self, request):
+        result = JsonResponse({})
+        city = request.GET.get('city')
+        if city:
+            addresses = Address.objects.filter(name_city__icontains=city)
+            result = JsonResponse(model_to_dict(addresses.first()))
+        return result
 
 
 
@@ -53,6 +115,8 @@ class HomePage(WagtailCaptchaEmailForm, Page):
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
     code = RichTextField(blank=True)
+    map_name_file = models.CharField(max_length=50, default="map.html")
+    map_file = models.FileField(upload_to="map/", default="map.html")
 
     content = StreamField(
         [
@@ -75,9 +139,10 @@ class HomePage(WagtailCaptchaEmailForm, Page):
 
 
     content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('map_name_file'),
+        FieldPanel('map_file'),
         StreamFieldPanel("content"),
         StreamFieldPanel("add_content"),
-        FieldPanel('code'),
         FormSubmissionsPanel(),
         FieldPanel('intro', classname="full"),
         InlinePanel('custom_form_fields', label="Контактное поле"),
