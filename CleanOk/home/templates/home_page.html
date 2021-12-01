@@ -306,11 +306,8 @@
         {% include_block block %}
     {% endfor %}
     <div class="offices " id="contacts">
-      <div>
-
-        {% include '../map/map.html' only%}
-
-
+      <div class="map">
+        {% include '../../media/map/self.map_name_file' only%}
       </div>
       <div class="search">
         <form action="get" class="cities">

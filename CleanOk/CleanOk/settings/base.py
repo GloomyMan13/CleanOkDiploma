@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'streams',
     'site_settings',
     'custom_code',
-    'forms',
     'services',
     'burger_menus',
     'employer',

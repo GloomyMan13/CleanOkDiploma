@@ -20,6 +20,8 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
+
+# from .map.map import write_code
 # from wagtail.core.fields import RichTextField
 # from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 
@@ -107,14 +109,13 @@ class Addresses(Page):
         return result
 
 
-
 class HomePage(WagtailCaptchaEmailForm, Page):
+    """Модель главной страницы"""
     template = "home/home_page.html"
     # template = "home/textpage.html"
     landing_page_template = "form/form_page_landing.html"
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
-    code = RichTextField(blank=True)
     map_name_file = models.CharField(max_length=50, default="map.html")
     map_file = models.FileField(upload_to="map/", default="map.html")
 
