@@ -62,7 +62,7 @@
 
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}{% endblock %}">
     {% block main_navigation %}
 
     <header class="header container">
@@ -99,7 +99,7 @@
       </div>
     </header>
 
-    <form action="#" class="modal hidden">
+        <form action="#" class="modal hidden">
       <div class="nav">
         <ul class="nav__burger-list">
             {% for item in burger.menu_items.all %}
@@ -123,33 +123,10 @@
       </div>
     </form>
     {% endblock %}
+  <div class="intro container">
+    <h2>
+        Спасибо за ваш отзыв!
+    </h2>
+  </div>
 
-    {# Place for page template #}
-    {% block content %}
-    {% endblock %}
-
-    {% footer_tag %}
-<!-- Глобальные настройки -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    {% if settings.site_settings.SocialMediaSettings.facebook %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.facebook }}">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.twitter %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.twitter }}">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    {% endif %}
-                    {% if settings.site_settings.SocialMediaSettings.youtube %}
-                        <a href="{{ settings.site_settings.SocialMediaSettings.youtube }}">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
-
-    </body>
-</html>
+</body>

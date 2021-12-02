@@ -175,7 +175,7 @@ WAGTAIL_SITE_NAME = "CleanOk"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://8444-92-37-249-88.ngrok.io'
+BASE_URL = 'http://f2a6-92-37-162-68.ngrok.io'
 
 # Ключи для капчи
 RECAPTCHA_PUBLIC_KEY = "6Le29RYdAAAAAG3NjbHT0KLcu9c2s68tETqJTPWj"
