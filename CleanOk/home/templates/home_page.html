@@ -312,10 +312,10 @@
         <form action="get" class="cities">
             <div class="search__city">
                 <input
-                    class="search__city-name"
-                    placeholder="Введите свой город для поиска"
+                        class="search__city-name"
+                        placeholder="Введите свой город для поиска"
                 />
-                <button class="search__city-btn" type="button">
+                <button class="search__city-btn" type="submit">
                     <img src="./static/src/icons/Arrow-Search.png" alt="arrow-search">
                 </button>
             </div>
@@ -345,8 +345,8 @@
             пожеланий клиента. <br><br>Экономим время, деньги и даем отличный результат за
             счет использования профессиональной техники, экологически безопасных
             средств, регулярного обучения персонала и оптимизации процесса.<br><br>
-            Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи
-            и предложим оптимальное решение.
+            Заполните форму, мы свяжемся с вами в ближайшее время, обсудим задачи
+            и предложим оптимальное решение.
         </article>
     </div>
     <div class="action_form">
@@ -362,11 +362,13 @@
                 {% endif %}
                 <div class="client_info">
                     {% render_field form.u0418u043cu044f placeholder="Ваше имя"%}
-                    {% render_field form.u041du043eu043cu0435u0440_u0442u0435u043bu0435u0444u043eu043du0430 type="phone" id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"%}
+                    {% render_field form.u041du043eu043cu0435u0440_u0442u0435u043bu0435u0444u043eu043du0430 type="phone"
+                    id="sphone" placeholder="+7 ("pattern="([0-9]{3}[ -][0-9]{3}[ -][0-9]{4})"%}
                 </div>
                 {% render_field form.email type="text" id="scompany" placeholder="Наименование компании"%}
                 <div class="client__messege">
-                    {% render_field form.messages class="smess" name="smassage" id="smassege" cols="47" rows="6"  placeholder="Напишите, о чем нам нужно знать"%}
+                    {% render_field form.messages class="smess" name="smassage" id="smassege" cols="47" rows="6"
+                    placeholder="Напишите, о чем нам нужно знать"%}
                 </div>
                 {% render_field form.wagtailcaptcha%}
                 <button type="submit" class="action__btn">Заказать звонок</button>

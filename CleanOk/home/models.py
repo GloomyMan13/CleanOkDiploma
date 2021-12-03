@@ -27,7 +27,7 @@ from django.forms.models import model_to_dict
 
 # class HomePage(Page):
 #
-#     template = "home/home_page.html"
+#     template = "home/home_page2.html"
 
 class FormField(AbstractFormField):
     page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='custom_form_fields')
@@ -85,11 +85,17 @@ class Address(models.Model):
         null=False,
         help_text='Напишите номер телефона',
     )
+    redirect_url = models.URLField(
+        help_text='Ссылка перенаправления',
+        default='',
+        blank=True,
+    )
 
     panels = [
         FieldPanel("name_city"),
         FieldPanel("address"),
         FieldPanel("phone_number"),
+        FieldPanel("redirect_url"),
     ]
 
     class Meta:
@@ -99,13 +105,21 @@ class Address(models.Model):
     def __str__(self):
         return self.name_city
 
+
 class Addresses(Page):
+    """Эндпоинт поиска адресов."""
+
     def serve(self, request):
         result = JsonResponse({})
         city = request.GET.get('city')
         if city:
-            addresses = Address.objects.filter(name_city__icontains=city)
-            result = JsonResponse(model_to_dict(addresses.first()))
+            addresses = [
+                model_to_dict(address)
+                for address in Address.objects.filter(
+                    name_city__icontains=city)
+            ]
+            result = JsonResponse(dict(success=True, result=addresses)
+            )
         return result
 
 

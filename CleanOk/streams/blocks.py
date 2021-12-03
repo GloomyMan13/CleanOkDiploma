@@ -8,10 +8,11 @@ from django.db import models
 
 
 class TitleAndTextBlock(blocks.StructBlock):
-    """Блок для Текст """
+    """Блок для описания сотрудника. Картина Текст """
 
-    title = blocks.CharBlock(required=True, help_text="Добавьте заголовок")
-    text = blocks.RichTextBlock(required=True, help_text="Добавьте текст")
+    title = blocks.CharBlock(required=True, help_text="Add your title")
+    text = blocks.RichTextBlock(required=True, help_text="Add additional text")
+    body = RichTextField(blank=True, help_text="Add additional text")
     img = ImageChooserBlock(required=False)
     # img = models.ForeignKey(
     #     "wagtailimages.Image",
@@ -24,36 +25,7 @@ class TitleAndTextBlock(blocks.StructBlock):
     class Meta:  # noqa
         template = "streams/title_and_text_block.html"
         icon = "edit"
-        label = "Заголовок и текст"
-
-
-class PictureBlock(blocks.StructBlock):
-    """Блок для описания сотрудника. Картина Текст """
-    text = blocks.RichTextBlock(required=False, help_text="Добавьте текст")
-    img = ImageChooserBlock(required=True)
-
-
-    class Meta:  # noqa
-        template = "streams/image_block.html"
-        icon = "image"
-        label = "Картинка"
-
-
-
-class Requisites(blocks.StructBlock):
-    """Блок для реквизитов """
-
-    name_company = blocks.CharBlock(required=True, help_text="Наименование организации")
-    inn_company = blocks.CharBlock(required=True, help_text="ИНН")
-    name_bank = blocks.CharBlock(required=True, help_text="Наименование банка")
-    bic_bank = blocks.CharBlock(required=True, help_text="БИК банка")
-    pc_company = blocks.CharBlock(required=True, help_text="р/с")
-
-
-    class Meta:
-        template = "streams/requisites.html"
-        icon = "form"
-        label = "Реквизиты"
+        label = "Title & Text"
 
 class EmployerBlock(blocks.StructBlock):
     """Блок для описания сотрудника. Картина Текст """
@@ -61,9 +33,17 @@ class EmployerBlock(blocks.StructBlock):
     name = blocks.CharBlock(required=True, help_text="Введите ФИО сотрудника")
     position =  blocks.CharBlock(required=True, help_text="Введите должность сотрудника")
     text = blocks.RichTextBlock(required=False, help_text="Введите дополнительный текст")
+    # body = RichTextField(blank=True, help_text="Add additional text")
     img = ImageChooserBlock(required=False)
+    # img = models.ForeignKey(
+    #     "wagtailimages.Image",
+    #     blank=True,
+    #     null=True,
+    #     related_name="+",
+    #     on_delete=models.SET_NULL,
+    # )
 
-    class Meta:
+    class Meta:  # noqa
         template = "streams/employer_block.html"
         icon = "edit"
         label = "Крточка Сотрудники"
@@ -92,7 +72,7 @@ class ServicesBlock(blocks.StructBlock): #blocks.StructBlock
 
 
 class CardBlock(blocks.StructBlock):
-    """Блок для описания карточек сертификатов. Картинка Текст """
+    """Блок для описания карточек сертификатов. Картина Текст """
 
     title = blocks.CharBlock(required=True, help_text="Add your title")
 
@@ -114,24 +94,37 @@ class CardBlock(blocks.StructBlock):
         )
     )
 
-    class Meta:
+    class Meta:  # noqa
         template = "streams/pdf_block.html"
         icon = "placeholder"
         label = "Staff Cards"
 
-class SimpleRichtextBlock(blocks.RichTextBlock):
-    pass
 
-class RichtextBlock(blocks.StructBlock):
-    """Блок с Richtext"""
+class RichtextBlock(blocks.RichTextBlock):
+    """Richtext with all the features."""
 
-    text = blocks.RichTextBlock(required=True, help_text="Добавьте текст")
+    def get_api_representation(self, value, context=None):
+        return richtext(value.source)
 
-    class Meta:
+    class Meta:  # noqa
         template = "streams/richtext_block.html"
         icon = "doc-full"
-        label = "Блок Текста"
+        label = "Full RichText"
 
+
+class SimpleRichtextBlock(blocks.RichTextBlock):
+    """Richtext without (limited) all the features."""
+
+    def __init__(
+        self, required=True, help_text=None, editor="default", features=None, **kwargs
+    ):  # noqa
+        super().__init__(**kwargs)
+        self.features = ["bold", "italic", "link"]
+
+    class Meta:  # noqa
+        template = "streams/richtext_block.html"
+        icon = "edit"
+        label = "Simple RichText"
 
 
 class CTABlock(blocks.StructBlock):
