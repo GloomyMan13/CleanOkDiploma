@@ -11,7 +11,7 @@ from streams import blocks
 
 
 class BlogListingPage(Page):
-    """Listing page lists all the Blog Detail Pages."""
+    """Тестовая страница для блока сервисы"""
 
     template = "blog/blog_listing_page.html"
 
@@ -34,7 +34,7 @@ class BlogListingPage(Page):
 
 
 class BlogDetailPage(Page):
-    """Blog detail page."""
+    """Тестовые Детали для Сервисов"""
     template = "blog/blog_detail_page.html"
     body = RichTextField(blank=True)
 
@@ -56,9 +56,6 @@ class BlogDetailPage(Page):
         [
             ("title_and_text", blocks.TitleAndTextBlock()),
             ("full_richtext", blocks.RichtextBlock()),
-            ("simple_richtext", blocks.SimpleRichtextBlock()),
-            ("cards", blocks.CardBlock()),
-            ("cta", blocks.CTABlock()),
         ],
         null=True,
         blank=True,

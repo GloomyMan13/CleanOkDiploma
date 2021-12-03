@@ -1,0 +1,19 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="requisites container">
+      <h2 class="requisites-title">Наши реквизиты</h2>
+      <div class="requisites-wrapper">
+        <div class="requisites-content">
+          <div class="requisites-name">Наименование организации:</div>
+          <div class="requisites-name own">{{self.name_company}}</div>
+          <div class="requisites-inn">ИНН</div>
+          <div class="requisites-inn own">{{self.inn_company}}</div>
+          <div class="requisites-bank">Наименование банка</div>
+          <div class="requisites-bank own">{{self.name_bank}}</div>
+          <div class="requisites-bic">БИК банка</div>
+          <div class="requisites-bic own">{{self.bic_bank}}</div>
+          <div class="requisites-bic">р/с</div>
+          <div class="requisites-bic own">{{self.pc_company}}</div>
+        </div>
+      </div>
+    </div>

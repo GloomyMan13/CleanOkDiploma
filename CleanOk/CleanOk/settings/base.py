@@ -175,22 +175,13 @@ WAGTAIL_SITE_NAME = "CleanOk"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://8444-92-37-249-88.ngrok.io'
+BASE_URL = 'http://61e8-92-37-162-68.ngrok.io'
 
 # Ключи для капчи
 RECAPTCHA_PUBLIC_KEY = "6Le29RYdAAAAAG3NjbHT0KLcu9c2s68tETqJTPWj"
 RECAPTCHA_PRIVATE_KEY = "6Le29RYdAAAAAFd60t73qfQAUtGgpYqTzHI1Vg9t"
 NOCAPTCHA = True
 # SILENCED_SYSTEM_CHECKS = {'captcha.recaptcha_test_key_error': True}
-
-#Параметры для Google Map
-# Mandatory
-WAGTAIL_ADDRESS_MAP_CENTER = 'Wellington, New Zealand'  # It must be a properly formatted address
-WAGTAIL_ADDRESS_MAP_KEY = 'AIzaSyDUEQtZCw1FDYDFdXK6ZEEMEHQSa5KNZOE'
-
-# Optional
-WAGTAIL_ADDRESS_MAP_ZOOM = 8  # See https://developers.google.com/maps/documentation/javascript/tutorial#MapOptions for more information.
-WAGTAIL_ADDRESS_MAP_LANGUAGE = 'ru'  # See https://developers.google.com/maps/faq#languagesupport for supported languages.
 
 # убирает надпись обновления в админе
 WAGTAIL_ENABLE_UPDATE_CHECK = False

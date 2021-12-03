@@ -1,0 +1,47 @@
+.requisites {
+  text-align: center;
+}
+
+.requisites-wrapper {
+  margin-left: 250px;
+  width: 900px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+          box-shadow: 0px 0px 11px rgba(4, 17, 51, 0.11);
+}
+
+.requisites-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (auto)[80px];
+      grid-template-rows: repeat(80px, auto);
+  row-gap: 40px;
+  margin: 0 auto;
+  padding: 60px 0;
+  margin-top: 80px;
+  width: 700px;
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: rgba(4, 17, 51, 0.7);
+  text-align: left;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #6783FE;
+}
+
+.requisites-content .own {
+  padding-left: 170px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: rgba(4, 17, 51, 0.7);
+  text-align: left;
+}
+/*# sourceMappingURL=requisites.css.map */

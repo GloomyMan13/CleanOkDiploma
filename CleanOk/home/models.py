@@ -4,8 +4,9 @@ from wagtail.core.models import Page
 from django.db import models
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import (
-    FieldPanel, FieldRowPanel,
-    InlinePanel, MultiFieldPanel
+    FieldRowPanel,
+    InlinePanel,
+    MultiFieldPanel,
 )
 from wagtail.core.fields import RichTextField
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
@@ -16,20 +17,12 @@ from wagtailcaptcha.models import WagtailCaptchaEmailForm
 from streams import blocks
 from wagtail.core.fields import StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.snippets.models import register_snippet
 from django.http import JsonResponse
 from django.forms.models import model_to_dict
 
-# from .map.map import write_code
-# from wagtail.core.fields import RichTextField
-# from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
-
-# class HomePage(Page):
-#
-#     template = "home/home_page2.html"
-
 class FormField(AbstractFormField):
+    """Модель для формы"""
     page = ParentalKey('HomePage', on_delete=models.CASCADE, related_name='custom_form_fields')
 
 @register_snippet
@@ -85,17 +78,11 @@ class Address(models.Model):
         null=False,
         help_text='Напишите номер телефона',
     )
-    redirect_url = models.URLField(
-        help_text='Ссылка перенаправления',
-        default='',
-        blank=True,
-    )
 
     panels = [
         FieldPanel("name_city"),
         FieldPanel("address"),
         FieldPanel("phone_number"),
-        FieldPanel("redirect_url"),
     ]
 
     class Meta:
@@ -105,21 +92,13 @@ class Address(models.Model):
     def __str__(self):
         return self.name_city
 
-
 class Addresses(Page):
-    """Эндпоинт поиска адресов."""
-
     def serve(self, request):
         result = JsonResponse({})
         city = request.GET.get('city')
         if city:
-            addresses = [
-                model_to_dict(address)
-                for address in Address.objects.filter(
-                    name_city__icontains=city)
-            ]
-            result = JsonResponse(dict(success=True, result=addresses)
-            )
+            addresses = Address.objects.filter(name_city__icontains=city)
+            result = JsonResponse(model_to_dict(addresses.first()))
         return result
 
 
@@ -203,21 +182,12 @@ class CityPage(Page):
         null=False,
         help_text='Напишите номер телефона',
     )
-    blog_image = models.ForeignKey(
-        "wagtailimages.Image",
-        blank=True,
-        null=True,
-        related_name="+",
-        on_delete=models.SET_NULL,
-    )
 
     content = StreamField(
         [
             ("title_and_text", blocks.TitleAndTextBlock()),
             ("full_richtext", blocks.RichtextBlock()),
-            ("simple_richtext", blocks.SimpleRichtextBlock()),
-            ("cards", blocks.CardBlock()),
-            ("cta", blocks.CTABlock()),
+            ("picture", blocks.PictureBlock()),
         ],
         null=True,
         blank=True,
@@ -227,7 +197,6 @@ class CityPage(Page):
         FieldPanel("name_city"),
         FieldPanel("address"),
         FieldPanel("phone_number"),
-        ImageChooserPanel("blog_image"),
         StreamFieldPanel("content"),
     ]
 
