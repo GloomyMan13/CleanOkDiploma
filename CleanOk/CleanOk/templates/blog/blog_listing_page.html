@@ -10,40 +10,38 @@
   <h2 class="services__header">
     Берем на себя заботу <br />о вашей недвижимости
   </h2>
-    <div>
-            <div class="services__info">
-              <div class="services__list">
-                {% for post in posts %}
-                  {% if forloop.counter > 0 %}
-                    <button
-                    class="tablinks"
-                    onclick="openService(event, '{{post.custom_title}}')"
-                    {% if forloop.counter == 1 %}
-                        id="defaultOpen"
-                    {% endif %}
-                  >
-                        <!-- when click goes blue and chandge card -->
-                        <div class="list-number">0{{forloop.counter}}</div>
-                        <div class="list-header">
-                          {{ post.custom_title }}
-                        </div>
-                      </button>
-                  {% endif %}
-                {% endfor %}
+  <div>
+    <div class="services__info">
+      <div class="services__list">
+        {% for post in posts %}
+          {% if forloop.counter > 0 %}
+            <button
+            class="tablinks"
+            onclick="openService(event, '{{post.custom_title}}')"
+              {% if forloop.counter == 1 %}
+                id="defaultOpen"
+              {% endif %}
+            >
+              <!-- when click goes blue and chandge card -->
+              <div class="list-number">0{{forloop.counter}}</div>
+              <div class="list-header">
+                {{ post.custom_title }}
               </div>
+            </button>
+            {% endif %}
+            {% endfor %}
             </div>
-
-
-         <div class="services__content">
-           {% for post in posts %}
-             <div id="{{post.custom_title}}" class="{{post.custom_title}} tabcontent">
-               <div>
-                 {{post.content}}
-               </div>
-             </div>
-           {% endfor %}
-         </div>
-        <!-- карточка сервиса с ссылками -->
-    </div>
+            </div>
+            <div class="services__content">
+              {% for post in posts %}
+                <div id="{{post.custom_title}}" class="{{post.custom_title}} tabcontent">
+                 <div>
+                   {{post.content}}
+                 </div>
+                </div>
+              {% endfor %}
+            </div>
+            <!-- карточка сервиса с ссылками -->
+            </div>
 </section>
 {% endblock content %}
