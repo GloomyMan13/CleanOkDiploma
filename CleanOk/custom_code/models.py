@@ -1,11 +1,10 @@
+"""Кастомный код"""
 from django_extensions.db.fields import AutoSlugField
 
 
 from wagtail.admin.edit_handlers import (
     MultiFieldPanel,
-    InlinePanel,
     FieldPanel,
-    PageChooserPanel,
 )
 
 from wagtail.snippets.models import register_snippet

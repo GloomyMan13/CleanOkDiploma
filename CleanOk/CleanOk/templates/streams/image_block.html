@@ -1,0 +1,12 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% image self.img max-729x729 as img %}
+<div class="section-tow wrapper">
+<div class="image-block">
+        <img src="{{ img.url }}" alt="{{ img.alt }}">
+        {% if self.text is not none %}
+                <p class="image-descr">{{self.text}}</p>
+        {% endif %}
+</div>
+</div>
